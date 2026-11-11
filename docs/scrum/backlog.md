@@ -122,7 +122,7 @@ Meta: PWA sin conexión, producción, pruebas de punta a punta y entrega. Rama: 
 
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
-| 39 | web | FE | 14 | M | Como cliente, quiero instalar la app y ver mis compras, avisos y parte del catálogo sin conexión. | Instalable en Android; en modo avión abre y muestra pedidos, notificaciones y catálogo visto. |  | Pendiente |
+| 39 | web | FE | 14 | M | Como cliente, quiero instalar la app y ver mis compras, avisos y parte del catálogo sin conexión. | Instalable en Android; en modo avión abre y muestra pedidos, notificaciones y catálogo visto. | specs/039-pwa-sin-conexion | Pendiente |
 | 40 | api | CI | 6 | M | Quiero producción estable en Azure con HTTPS para webhooks. | Stripe y Printful llegan a la URL pública de la API; las migraciones se aplican desde el pipeline. |  | Pendiente |
 | 41 | web | FE | 4 | S | Quiero accesibilidad y rendimiento revisados. | Lighthouse sin fallas críticas de accesibilidad; contrastes validados. |  | Pendiente |
 | 42 | api + web | BE FE | 7 | M | Quiero el flujo completo probado y un pedido real de demo. | Compra de prueba de punta a punta con sesión; la confirmación real en Printful es opcional. |  | Pendiente |
