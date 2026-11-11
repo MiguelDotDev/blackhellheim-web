@@ -102,7 +102,7 @@ Meta: Código de creadora, seguimiento, historial y panel de pedidos. Rama: `spr
 |---|---|---|---|---|---|---|---|---|
 | 31 | api + web | BE FE DB | 7 | M | Como administradora, quiero crear códigos de creadora y que la cliente los escriba en el checkout, para saber cuántas ventas trae cada una. | El código se valida al aplicarlo y el pedido lo guarda; no cambia el precio ni genera comisión. | specs/031-codigo-creadora | Pendiente |
 | 32 | api | BE | 8 | M | Quiero actualizar pedidos con los webhooks de envío de Printful. | El pedido pasa a enviado con número y enlace de guía. |  | Pendiente |
-| 33 | web | FE | 5 | M | Como cliente, quiero ver la confirmación y el estado de mi pedido. | Muestra estado, dirección y guía del pedido de la cliente con sesión. |  | Pendiente |
+| 33 | web | FE | 5 | M | Como cliente, quiero ver la confirmación y el estado de mi pedido. | Muestra estado, dirección y guía del pedido de la cliente con sesión. | specs/033-confirmacion-pedido | Pendiente |
 | 34 | api + web | BE FE | 10 | M | Como cliente, quiero mi historial de pedidos con detalle. | Lista mis pedidos paginados y abre el detalle de cada uno. |  | Pendiente |
 | 38 | api + web | BE FE | 11 | M | Como administradora, quiero ver los pedidos y, por cada código de creadora, cuántas ventas tiene y la lista paginada de sus compras. | El panel muestra el total de ventas (pedidos entregados) por código y una lista paginada de las compras con ese código; los pedidos se filtran por estado y la administradora puede marcar uno como entregado. |  | Pendiente |
 
