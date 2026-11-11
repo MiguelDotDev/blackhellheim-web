@@ -18,11 +18,11 @@
 - [ ] T005 [FE] Escribir primero `src/compartido/api/middleware-sesion.test.ts`: añade `Authorization`; un 401 renueva y repite una vez; N peticiones simultáneas → una renovación; la renovación con 401 no entra en bucle; fallo de red no cierra la sesión
 - [ ] T006 [FE] Implementar `middleware-sesion.ts` y la opción en `crearClienteApi`; exportar por `index.ts`
 - [ ] T007 [FE] Escribir primero `src/entidades/sesion/modelo/sesion.test.ts` (estados, token solo en memoria: espiar `localStorage`, `sessionStorage` e `indexedDB`; cierre limpia el estado) e implementar el store
-- [ ] T008 [FE] Conectar cliente y store en `src/aplicacion` y la renovación silenciosa al arrancar (D3)
+- [ ] T008 [FE] Escribir primero una prueba del arranque (renovación silenciosa con éxito → sesión activa; con fallo → anónima sin error visible) y conectar cliente y store en `src/aplicacion` (D3)
 
 ## Fase 4: Pantallas (US1)
 
-- [ ] T009 [FE] Escribir primero pruebas de `FormularioAcceso` y `FormularioRegistro` (errores por campo, mensaje genérico, botón deshabilitado en envío, foco al primer error, etiquetas)
+- [ ] T009 [FE] Escribir primero pruebas de `FormularioAcceso` y `FormularioRegistro` (errores por campo, mensaje genérico, botón deshabilitado en envío, foco al primer error, etiquetas, flujo completo solo con teclado [SC-003], la contraseña nunca aparece en `console.*` ni en el DOM tras enviar [FR-007], mensaje idéntico para correo inexistente y contraseña incorrecta)
 - [ ] T010 [FE] Implementar slices `funcionalidades/acceso` y `paginas/acceso`, ruta `/acceso`, botón de cierre de sesión
 
 ## Fase 5: Guardia (US3)
