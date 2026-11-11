@@ -21,7 +21,7 @@ I cumple (`compartido/ui` con `index.ts`) · VII contraste · VIII licencias · 
 
 ```text
 specs/011-marca/{spec.md, plan.md, tasks.md}
-src/aplicacion/estilos/marca.css          # @theme + @font-face importados
+src/aplicacion/estilos/marca.css          # @theme + @font-face; se importa desde el principal.css existente (ahí está @import "tailwindcss")
 src/compartido/ui/{LogoMarca.vue, Monograma.vue, marca/*.svg, index.ts}
 src/compartido/lib/contraste.ts (+ prueba)
 tests/marca/{contraste.test.ts, sin-literales.test.ts}

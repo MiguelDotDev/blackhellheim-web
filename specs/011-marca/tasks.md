@@ -10,8 +10,8 @@
 ## Fase 2: Tokens y fuentes (US1, US2)
 
 - [ ] T003 [FE] Escribir primero `src/compartido/lib/contraste.test.ts` y `tests/marca/contraste.test.ts` (pares declarados ≥ 4.5 o 3 para texto grande; falla con el valor real mientras no existan)
-- [ ] T004 [FE] Implementar `contraste.ts`, `marca.css` (`@theme` con colores, fuentes, radios; `@font-face`/importes con `font-display: swap`) y la tabla de pares
-- [ ] T005 [FE] Escribir primero `tests/marca/sin-literales.test.ts` (sin `#hex`/`rgb(` fuera de `marca.css`; sin dominios de fuentes externos en código ni en `index.html`); sustituir literales del esqueleto por tokens y dejarla en verde
+- [ ] T004 [FE] Implementar `contraste.ts`, `marca.css` (`@theme` con colores, fuentes, radios; `@font-face`/importes con `font-display: swap`, importado desde `src/aplicacion/estilos/principal.css`; definir también los tokens de tema oscuro si el documento de diseño los trae) y la tabla de pares
+- [ ] T005 [FE] Escribir primero `tests/marca/sin-literales.test.ts` (sin `#hex`/`rgb(` fuera de `marca.css`; sin dominios de fuentes externos en código ni en `index.html`; cada `@font-face` declara `font-display: swap` y formato `woff2`); sustituir literales del esqueleto por tokens y dejarla en verde
 
 ## Fase 3: Logo y monograma (US3)
 
