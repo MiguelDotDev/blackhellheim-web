@@ -14,7 +14,7 @@ Meta: Backend en Docker, SDD y Jira listos. Rama: `sprint/01`.
 
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
-| 1 | api + web | DOC | 3 | M | Como desarrolladora, quiero la constitución y las plantillas de Spec Kit en ambos repos para que cada cambio nazca de una spec. | constitucion.md aprobada y /speckit.specify corre en los dos repos. |  | Por auditar |
+| 1 | api + web | DOC | 3 | M | Como desarrolladora, quiero la constitución y las plantillas de Spec Kit en ambos repos para que cada cambio nazca de una spec. | constitucion.md aprobada y /speckit.specify corre en los dos repos. | specs/000-fundacion | Hecha |
 | 2 | api | BE | 9 | M | Quiero la solución .NET 10 en capas con Mediator y comportamientos de pipeline. | Compila, y una consulta de ejemplo cruza API, Aplicación y Dominio sin violar dependencias. |  | Pendiente |
 | 3 | api | BE DB | 8 | M | Quiero SQL Server en Compose, EF Core, migración inicial y datos semilla. | docker compose up crea la base y aplica la migración con semillas. |  | Pendiente |
 | 4 | api | BE | 4 | M | Quiero OpenAPI con Scalar y errores como ProblemDetails. | /scalar muestra el contrato y un error de validación devuelve ProblemDetails. |  | Pendiente |
