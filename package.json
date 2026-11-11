@@ -13,9 +13,12 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "type-check": "vue-tsc --build",
-    "test": "vitest run"
+    "test": "vitest run",
+    "api:generar": "openapi-typescript specs/009-cliente-api-mock/contratos/openapi.json -o src/compartido/api/generado/esquema.d.ts",
+    "mock": "node mock/iniciar.ts"
   },
   "dependencies": {
+    "openapi-fetch": "^0.17.0",
     "pinia": "^4.1.0",
     "vue": "^3.5.45",
     "vue-router": "^5.5.0"
@@ -33,6 +36,7 @@
     "eslint-plugin-vue": "^10.12.1",
     "globals": "^17.14.0",
     "jsdom": "^31.0.0",
+    "openapi-typescript": "^7.13.0",
     "tailwindcss": "^4.3.5",
     "typescript": "~5.9",
     "typescript-eslint": "^8.72.2",

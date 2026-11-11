@@ -49,7 +49,7 @@ const politicas = [
 ]
 
 export default tseslint.config(
-  { ignores: ['dist/', 'node_modules/', 'coverage/'] },
+  { ignores: ['dist/', 'node_modules/', 'coverage/', 'src/compartido/api/generado/'] },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginVue.configs['flat/recommended'],

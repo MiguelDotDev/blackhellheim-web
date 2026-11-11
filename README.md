@@ -28,3 +28,11 @@ npm run build        # compilación de producción
 Valores personales: `.env.development.local` (ignorado por git). Regla: nada secreto en `VITE_*`; el repositorio es público.
 
 La guía de capas y de reglas de importación está en [`src/LEEME.md`](src/LEEME.md).
+
+## Cliente de API y mock
+
+- `npm run api:generar` regenera `src/compartido/api/generado/esquema.d.ts` desde `specs/009-cliente-api-mock/contratos/openapi.json` (copia del backend; no se edita aquí). Una prueba falla si los tipos versionados no corresponden al contrato.
+- `npm run mock` levanta el mock en `http://localhost:4010` (otro puerto con `MOCK_PUERTO`). Responde `GET /salud`, `GET /salud/base` y `GET /tiendas/{codigo}` (`MEX` existe).
+- Para trabajar sin backend usa dos terminales: `npm run mock` y `npm run dev`.
+- Actualizar el contrato: copia el nuevo `openapi.json` del backend, ejecuta `npm run api:generar`, corrige `mock/respuestas.ts` si `npm run type-check` o `tests/api/mock-cobertura.test.ts` fallan, y haz commit de ambos.
+- Uso en código: `import { crearClienteApi } from '@/compartido/api'`.
