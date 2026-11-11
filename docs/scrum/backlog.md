@@ -114,7 +114,7 @@ Meta: Notificaciones, push, reseñas y lista de deseos. Rama: `sprint/10`.
 |---|---|---|---|---|---|---|---|---|
 | 35 | api + web | BE FE | 16 | S | Como cliente, quiero una bandeja de notificaciones y avisos push. | Un cambio de estado crea el aviso en la bandeja y llega como push a Android si hay permiso. | specs/035-notificaciones | Pendiente |
 | 36 | api + web | BE FE | 6 | C | Como cliente, quiero una lista de deseos. | Agregar y quitar playeras; solo con sesión. | specs/036-lista-deseos | Pendiente |
-| 37 | api + web | BE FE | 14 | S | Como cliente, quiero reseñas con estrellas y comentarios. | Solo compradoras verificadas reseñan; la administradora puede ocultar contenido. |  | Pendiente |
+| 37 | api + web | BE FE | 14 | S | Como cliente, quiero reseñas con estrellas y comentarios. | Solo compradoras verificadas reseñan; la administradora puede ocultar contenido. | specs/037-resenas | Pendiente |
 
 ## Sprint 11 · 27 nov–4 dic · 40 h
 
