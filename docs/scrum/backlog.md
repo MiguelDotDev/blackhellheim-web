@@ -128,6 +128,6 @@ Meta: PWA sin conexión, producción, pruebas de punta a punta y entrega. Rama: 
 | 42 | api + web | BE FE | 7 | M | Quiero el flujo completo probado y un pedido real de demo. | Compra de prueba de punta a punta con sesión; la confirmación real en Printful es opcional. | specs/042-flujo-completo | Pendiente |
 | 43 | api | DB | 2 | M | Quiero demostrar aplicar y revertir una migración. | Se aplica y revierte una migración en vivo sin perder datos de prueba. |  | Pendiente |
 | 44 | api + web | DOC | 3 | M | Quiero specs diferidos de aviso de privacidad y CFDI con plantillas. | Existen las carpetas y plantillas marcadas como fuera de alcance. | specs/044-specs-diferidos | Pendiente |
-| 45 | api + web | DOC | 4 | M | Quiero la documentación final y la evidencia de cada sprint. | README, evidencias SDD, revisiones y retrospectivas en ambos repos. |  | Pendiente |
+| 45 | api + web | DOC | 4 | M | Quiero la documentación final y la evidencia de cada sprint. | README, evidencias SDD, revisiones y retrospectivas en ambos repos. | specs/045-documentacion-final | Pendiente |
 
 Total: 382 h.
