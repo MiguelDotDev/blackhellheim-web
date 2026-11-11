@@ -60,6 +60,6 @@ Quiero que un push a `main` construya la imagen, la publique y actualice el serv
 
 ## Supuestos
 
-- Servicio objetivo: Azure Container Apps con Azure Container Registry (decisión provisional, ver plan D1); se revisa si la desarrolladora ya eligió otro servicio.
+- Servicio objetivo: Azure Container Apps con imágenes en GHCR (decisión del proyecto; ver plan D1); se revisa si la desarrolladora ya eligió otro servicio.
 - Dominio propio y TLS personalizado quedan fuera: se usa la dirección por defecto.
 - La parte api (imagen, despliegue, `API_URL` interna) vive en el repositorio del backend.

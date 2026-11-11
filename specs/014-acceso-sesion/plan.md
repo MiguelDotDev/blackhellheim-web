@@ -16,7 +16,7 @@ Slice `entidades/sesion` (store Pinia con token en memoria y `renovar()` de una 
 - **D2 Una renovación en vuelo**: se guarda la promesa pendiente; las peticiones con 401 la esperan y se repiten una vez con una marca para no entrar en bucle. La petición de renovación nunca dispara renovación.
 - **D3 Arranque**: `aplicacion` intenta `renovar()` silencioso antes de montar rutas privadas; si falla, queda anónima.
 - **D4 Redirección**: `destino` se valida con `^/(?!/)`; se guarda en la query, no en almacenamiento.
-- **D5 Mock**: se amplía `mock/respuestas.ts` con las operaciones del contrato de auth; `?`/cabecera `x-mock-token: caducado` fuerza 401. Los cuerpos usan `satisfies` sobre los tipos generados.
+- **D5 Mock**: se amplía `mock/respuestas.ts` con las operaciones del contrato de auth; la cabecera `x-mock-token: caducado` fuerza 401. Los cuerpos usan `satisfies` sobre los tipos generados.
 - **D6 Script de generación**: `api:generar` apunta al contrato vigente más reciente (el de esta HU); se actualiza al copiarlo.
 
 ## Verificación de la constitución
