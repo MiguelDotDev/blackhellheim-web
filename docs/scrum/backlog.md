@@ -91,7 +91,7 @@ Meta: Pedido, pago con Stripe y borrador en Printful. Rama: `sprint/08`.
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
 | 28 | api | BE DB | 12 | M | Quiero pedidos con estados e idempotencia. | Reintentar un pago no duplica el pedido; el precio queda congelado al pagar; solo usuarios autenticados crean pedidos. |  | Pendiente |
-| 29 | api + web | BE FE CI | 14 | M | Como cliente, quiero pagar con Stripe. | Crea la sesión de Stripe Checkout, redirige, valida el webhook y marca el pedido pagado; los pagos diferidos (OXXO, SPEI) quedan pendientes. |  | Pendiente |
+| 29 | api + web | BE FE CI | 14 | M | Como cliente, quiero pagar con Stripe. | Crea la sesión de Stripe Checkout, redirige, valida el webhook y marca el pedido pagado; los pagos diferidos (OXXO, SPEI) quedan pendientes. | specs/029-pago-stripe | Pendiente |
 | 30 | api | BE | 10 | M | Quiero que un pago aprobado cree el borrador en Printful. | El pedido se crea como borrador con external_id; confirmar solo si la bandera real está activa. |  | Pendiente |
 
 ## Sprint 9 · 13–19 nov · 41 h
