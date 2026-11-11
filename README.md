@@ -36,3 +36,11 @@ La guía de capas y de reglas de importación está en [`src/LEEME.md`](src/LEEM
 - Para trabajar sin backend usa dos terminales: `npm run mock` y `npm run dev`.
 - Actualizar el contrato: copia el nuevo `openapi.json` del backend, ejecuta `npm run api:generar`, corrige `mock/respuestas.ts` si `npm run type-check` o `tests/api/mock-cobertura.test.ts` fallan, y haz commit de ambos.
 - Uso en código: `import { crearClienteApi } from '@/compartido/api'`.
+
+## Integración continua
+
+`.github/workflows/ci.yml` corre en cada push y pull request hacia `main`, `release`, `developer` y `sprint/**`. Son cuatro controles independientes: `verificar (lint)`, `verificar (type-check)`, `verificar (test)` y `verificar (build)`. Usa permisos de solo lectura, sin secretos, y acciones fijadas por SHA.
+
+- **Leer un fallo**: en la pestaña Actions abre el control en rojo; solo falla el que corresponde.
+- **Reproducir en local**: `npm ci` y luego el comando del control, por ejemplo `npm run lint`.
+- **Exigirlos**: en Settings → Branches, protege `main`, `release` y `developer` exigiendo pull request y los cuatro controles.
