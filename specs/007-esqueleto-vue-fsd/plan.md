@@ -127,3 +127,7 @@ tests/
 ## Seguimiento de complejidad
 
 Sin violaciones que justificar.
+
+## Resultado de la revisión de licencias instaladas (T005)
+
+Árbol instalado revisado el 2026-11-11: MIT, Apache-2.0, ISC, BSD-2/3-Clause, BlueOak-1.0.0, 0BSD y MPL-2.0 (transitivas de Tailwind/Lightning CSS). Todas son licencias libres; ninguna no libre, la HU continúa.
