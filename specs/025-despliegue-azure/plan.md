@@ -18,7 +18,7 @@ Imagen `nginx-unprivileged` con la PWA compilada y proxy de `/api`; flujo de des
 
 ## Licencias (a confirmar en la tarea de verificación)
 
-nginx (BSD-2-Clause), `nginxinc/nginx-unprivileged` (BSD-2-Clause), `azure/login` (MIT), `docker/setup-buildx-action` / `docker/build-push-action` (Apache-2.0 / opcionales), Azure CLI (MIT).
+nginx (BSD-2-Clause), `nginxinc/nginx-unprivileged` (BSD-2-Clause), `azure/login` (MIT), `docker/login-action` (MIT), `docker/build-push-action` (Apache-2.0), Azure CLI (MIT), GHCR (servicio gratuito de GitHub).
 
 ## Verificación de la constitución
 
