@@ -17,4 +17,14 @@ npm run test         # Vitest
 npm run build        # compilación de producción
 ```
 
+## Ambientes
+
+| Ambiente | Archivo | `VITE_API_URL` | Para qué |
+|---|---|---|---|
+| desarrollo | `.env.development` | `http://localhost:4010` | servidor mock (`npm run dev`) |
+| prueba | `.env.test` | `http://localhost:5068` | API real local (`npm run test`, `npm run build:test`) |
+| producción | `.env.production` | `/api` | mismo origen tras nginx (`npm run build`) |
+
+Valores personales: `.env.development.local` (ignorado por git). Regla: nada secreto en `VITE_*`; el repositorio es público.
+
 La guía de capas y de reglas de importación está en [`src/LEEME.md`](src/LEEME.md).

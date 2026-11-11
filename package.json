@@ -8,6 +8,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "build:test": "vue-tsc --build && vite build --mode test",
     "build": "vue-tsc --build && vite build",
     "preview": "vite preview",
     "lint": "eslint .",

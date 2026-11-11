@@ -5,3 +5,7 @@ declare module '*.vue' {
   const componente: DefineComponent<object, object, unknown>
   export default componente
 }
+
+interface ImportMetaEnv {
+  readonly VITE_API_URL: string
+}
