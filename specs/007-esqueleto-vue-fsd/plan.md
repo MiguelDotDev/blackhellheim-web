@@ -9,7 +9,7 @@ Crear desde cero (el repositorio solo tiene la semilla de SDD) el proyecto Vue 3
 
 ## Contexto técnico
 
-**Lenguaje/Versión**: TypeScript 6.0.x (modo estricto) sobre Node 24 LTS
+**Lenguaje/Versión**: TypeScript 5.9.x (modo estricto) sobre Node 24 LTS
 **Dependencias principales**: Vue 3.5, Vue Router 5, Pinia 4, Vite 8, Tailwind CSS 4
 **Almacenamiento**: N/A
 **Pruebas**: Vitest 5 + @vue/test-utils + jsdom
@@ -30,7 +30,7 @@ Consulta al registro de npm el 2026-11-11. Todas libres; se vuelve a comprobar e
 | pinia | estado | MIT |
 | vite | empaquetador | MIT |
 | @vitejs/plugin-vue | plugin | MIT |
-| typescript (6.0.x) | lenguaje | Apache-2.0 |
+| typescript (5.9.x) | lenguaje | Apache-2.0 |
 | vue-tsc | verificación de tipos | MIT |
 | tailwindcss, @tailwindcss/vite | estilos | MIT |
 | eslint, @eslint/js, globals | lint | MIT |
@@ -121,7 +121,7 @@ tests/
 ## Riesgos
 
 - **R-1**: sintaxis de políticas de `eslint-plugin-boundaries` v7 nueva; mitigación: pruebas en rojo primero y consulta de la documentación oficial al implementar.
-- **R-2**: compatibilidad TypeScript/typescript-eslint; mitigación: TS 6.0.x fijado (D3).
+- **R-2**: compatibilidad TypeScript/typescript-eslint; mitigación: TS 5.9.x fijado (D3); también exigido por `openapi-typescript` (HU-9).
 - **R-3**: ESLint con configuración nueva (flat config) y `eslint-plugin-vue`; mitigación: partir de la configuración recomendada de cada paquete y probar con `npm run lint`.
 
 ## Seguimiento de complejidad

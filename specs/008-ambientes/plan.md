@@ -8,7 +8,7 @@ Usar los modos nativos de Vite para tres ambientes con `.env.development`, `.env
 
 ## Contexto técnico
 
-**Lenguaje/Versión**: TypeScript 6.0.x sobre Node 24 (heredado de HU-7)
+**Lenguaje/Versión**: TypeScript 5.9.x sobre Node 24 (heredado de HU-7)
 **Dependencias principales**: Vite (`loadEnv`, modos) y Vitest, ya instalados por HU-7. **Ninguna dependencia nueva.**
 **Almacenamiento**: N/A
 **Pruebas**: Vitest; pruebas de unidad en `src/compartido/lib/` y de configuración en `tests/ambientes/`

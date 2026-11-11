@@ -20,8 +20,8 @@ Fecha de consulta de versiones y licencias: 2026-11-11 (registro público de npm
 
 ## D3. Versión de TypeScript
 
-- **Decisión**: `typescript` 6.0.x (Apache-2.0), no la 7.x.
-- **Razón**: `typescript-eslint` 8.x declara `typescript >=4.8.4 <6.1.0` como peer; con 7.x `npm install` fallaría o forzaría `--legacy-peer-deps`. Se revisa al actualizar `typescript-eslint`.
+- **Decisión**: `typescript` 5.9.x (Apache-2.0), no la 6.x ni la 7.x.
+- **Razón**: `typescript-eslint` 8.x declara `typescript <6.1.0` como peer y `openapi-typescript` (HU-9) declara `typescript ^5.x`; con 6.x o 7.x `npm install` fallaría o forzaría `--legacy-peer-deps`. `vue-tsc` y `vue-router` aceptan 5.x. Se revisa cuando `openapi-typescript` amplíe su peer.
 
 ## D4. Pruebas
 
