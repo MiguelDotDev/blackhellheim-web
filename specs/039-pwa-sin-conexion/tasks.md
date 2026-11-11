@@ -10,7 +10,7 @@
 
 ## Fase 2: Manifiesto y service worker
 
-- [ ] T002 [FE] Verificar la licencia de `vite-plugin-pwa`, Workbox y `fake-indexeddb` y su árbol, instalarlos y anotarlas en `plan.md`
+- [ ] T002 [FE] Verificar la licencia de `vite-plugin-pwa`, Workbox y `fake-indexeddb` y su árbol, instalarlos y anotarlas en `plan.md` (FR-002)
 - [ ] T003 [FE] Escribir primero pruebas de configuración (manifiesto con nombre, iconos, `standalone`, colores; el service worker no cachea escrituras de `/api`) e implementar la configuración del plugin (FR-001, FR-004)
 - [ ] T004 [FE] Aviso de nueva versión y actualización controlada, con prueba (FR-006)
 
