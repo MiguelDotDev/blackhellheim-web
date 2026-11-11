@@ -18,13 +18,13 @@
 
 ## Fase 4: Formulario y subida (US1, US2)
 
-- [ ] T006 [FE] Escribir primero pruebas de validación de archivos (tipo, tamaño, resolución) y del estado de subida (progreso, fallo, reintento por archivo, reordenar, quitar)
-- [ ] T007 [FE] Implementar `ui/` del formulario (campos, imágenes, colores, tallas), validación por campo, errores del servidor, deshabilitar envío y foco al primer error; sin campos de precio (prueba que lo comprueba)
+- [ ] T006 [FE] Escribir primero pruebas de validación de archivos (tipo, tamaño, resolución) y del estado de subida (progreso, fallo, reintento por archivo, reordenar, quitar; imagen totalmente transparente rechazada con motivo; límite de imágenes del contrato con mensaje claro)
+- [ ] T007 [FE] Implementar `ui/` del formulario (campos, imágenes, colores, tallas), validación por campo, errores del servidor, deshabilitar envío y foco al primer error; sin campos de precio (prueba que lo comprueba); prueba de que una renovación de sesión a mitad del formulario conserva lo escrito y de que todo el formulario se completa solo con teclado (SC-003)
 - [ ] T008 [FE] Implementar la entidad `diseno` y la llamada de guardado con el cliente generado
 
 ## Fase 5: Edición y rutas (US4)
 
-- [ ] T009 [FE] Escribir primero pruebas de carga de un diseño, guardado y conflicto 409; implementar `paginas/admin-disenos` y las rutas con `meta.rol = Administrador`
+- [ ] T009 [FE] Escribir primero pruebas de carga de un diseño, guardado y conflicto 409 (solo si el contrato define versión/ETag, plan D5; si no, anotar y omitir); implementar `paginas/admin-disenos` y las rutas con `meta.rol = Administrador`
 
 ## Fase 6: Cierre
 
