@@ -8,11 +8,12 @@ Imagen `nginx-unprivileged` con la PWA compilada y proxy de `/api`; flujo de des
 
 ## Decisiones
 
-- **D1 Servicio**: Azure Container Apps (HTTPS y dirección `*.azurecontainerapps.io` por defecto, escala a cero) + Azure Container Registry. Alternativa: App Service para contenedores (más simple, sin escala a cero). Provisional.
+- **D1 Servicio**: Azure Container Apps (HTTPS y dirección `*.azurecontainerapps.io` por defecto, escala a cero) + GitHub Container Registry (GHCR, decisión del proyecto: gratis, sin ACR). Alternativa: App Service para contenedores (más simple, sin escala a cero). Provisional.
 - **D2 Proxy**: plantilla `nginx/default.conf.template` con `${API_URL}`; la imagen oficial sustituye variables al arrancar. `proxy_pass ${API_URL}/;` quita el prefijo `/api`.
 - **D3 Caché**: `/assets/*` con `immutable, max-age=31536000`; `sw.js`, `index.html` y `manifest.webmanifest` con `no-cache`.
 - **D4 OIDC**: `azure/login` con `client-id`, `tenant-id`, `subscription-id` desde `vars.*`; sin `secrets.`.
-- **D5 Despliegue por SHA**: `docker build` → `az acr` push `web:<sha>` → `az containerapp update --image`. Comprobación posterior de `/` (y `/api/salud` informativo).
+- **D7 GHCR**: el flujo agrega `packages: write` a los permisos y se autentica con `github.token` (no es un secreto del repositorio). La imagen se publica como paquete público (repositorio público) para que Container Apps la descargue sin credenciales de registro.
+- **D5 Despliegue por SHA**: `docker build` → push a `ghcr.io/<dueño>/blackhellheim-web:<sha>` con `github.token` → `az containerapp update --image`. Comprobación posterior de `/` (y `/api/salud` informativo).
 - **D6 CI previo**: el despliegue invoca el flujo de CI como reutilizable (`workflow_call` añadido a `ci.yml`, ajustando la prueba de HU-10) o repite las cuatro verificaciones; se elige `workflow_call` para no duplicar. Cambio a `ci.yml` y su prueba en esta HU.
 
 ## Licencias (a confirmar en la tarea de verificación)

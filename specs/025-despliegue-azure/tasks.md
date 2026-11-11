@@ -6,8 +6,9 @@
 ## Fase 1: Preparación
 
 - [ ] T001 [FE] Confirmar que la HU-10 está hecha (`ci.yml` y su prueba existen) y consultar SHA y licencias de `azure/login` y demás acciones (`git ls-remote`); registrar en `plan.md`
-- [ ] T002 [MANUAL] Crear en Azure: grupo de recursos, Container Registry, entorno y Container App de la web; app registrada con credencial federada para `repo:<dueño>/blackhellheim-web:ref:refs/heads/main`; rol mínimo (AcrPush + Contributor sobre la app)
-- [ ] T003 [MANUAL] Definir en GitHub las variables (no secretas) `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `ACR_NOMBRE`, `APP_WEB` y el entorno `produccion`
+- [ ] T002 [MANUAL] Crear en Azure: grupo de recursos, entorno y Container App de la web; app registrada con credencial federada para `repo:<dueño>/blackhellheim-web:ref:refs/heads/main`; rol mínimo (Contributor solo sobre la Container App)
+- [ ] T002b [MANUAL] Tras la primera publicación, hacer público el paquete `blackhellheim-web` en GHCR (Packages → Package settings → Change visibility); la Container App lo descarga sin credenciales
+- [ ] T003 [MANUAL] Definir en GitHub las variables (no secretas) `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `APP_WEB` y el entorno `produccion`
 
 ## Fase 2: Imagen (US1)
 
@@ -17,7 +18,7 @@
 
 ## Fase 3: Flujo de despliegue (US2)
 
-- [ ] T007 [FE] Escribir primero `tests/despliegue/flujo-despliegue.test.ts`: solo `push` a `main`; permisos `contents: read` + `id-token: write`; sin `secrets.`; todos los `uses:` por SHA; `concurrency` sin cancelar; despliegue por SHA de commit, nunca `latest`; llama al CI previo
+- [ ] T007 [FE] Escribir primero `tests/despliegue/flujo-despliegue.test.ts`: solo `push` a `main`; permisos `contents: read` + `id-token: write` + `packages: write` (solo en el trabajo de publicación si se separa); sin `secrets.`; todos los `uses:` por SHA; `concurrency` sin cancelar; despliegue por SHA de commit, nunca `latest`; llama al CI previo
 - [ ] T008 [FE] Añadir `workflow_call` a `ci.yml` (y ajustar `tests/ci/flujo-ci.test.ts` conservando todas sus reglas) y crear `despliegue.yml` (CI → construir → publicar → actualizar → comprobar)
 - [ ] T009 [FE] Ejecutar `tests/ci` y `tests/despliegue` en verde
 
