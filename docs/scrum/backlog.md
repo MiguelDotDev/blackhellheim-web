@@ -80,9 +80,9 @@ Meta: Carrito, cotización de envío y checkout con sesión obligatoria. Rama: `
 
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
-| 24 | api + web | BE FE | 12 | M | Como visitante, quiero un carrito que se conserve. | Sin sesión el carrito vive en el navegador; al iniciar sesión se fusiona con el del servidor. |  | Pendiente |
+| 24 | api + web | BE FE | 12 | M | Como visitante, quiero un carrito que se conserve. | Sin sesión el carrito vive en el navegador; al iniciar sesión se fusiona con el del servidor. | specs/024-carrito | Pendiente |
 | 26 | api | BE | 8 | M | Quiero cotizar el envío con Printful. | Devuelve métodos con días estimados, costo en MXN y aviso de posibles cargos aduanales. |  | Pendiente |
-| 27 | web | FE | 13 | M | Como cliente, quiero un checkout con dirección mexicana, envío cotizado y resumen, y que me pida iniciar sesión si no la tengo. | Un visitante que llega al pago es enviado a iniciar sesión o registrarse y regresa al checkout con el carrito intacto; muestra el total antes de pagar. El botón Pagar se conecta en la historia 29. |  | Pendiente |
+| 27 | web | FE | 13 | M | Como cliente, quiero un checkout con dirección mexicana, envío cotizado y resumen, y que me pida iniciar sesión si no la tengo. | Un visitante que llega al pago es enviado a iniciar sesión o registrarse y regresa al checkout con el carrito intacto; muestra el total antes de pagar. El botón Pagar se conecta en la historia 29. | specs/027-checkout | Pendiente |
 
 ## Sprint 8 · 6–12 nov · 36 h
 
