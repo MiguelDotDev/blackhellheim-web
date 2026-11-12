@@ -18,12 +18,22 @@ docker run --rm --network host -e API_URL=http://127.0.0.1:4011 bhh-web:local
 curl http://127.0.0.1:8080/api/salud    # {"estado":"ok"}
 ```
 
-## Recursos de Azure (los crea la desarrolladora)
+## Recursos de Azure (scripts en `scripts/azure/`)
 
-1. Grupo de recursos y entorno de Container Apps.
-2. Container App de la web: ingreso externo HTTPS al puerto 8080, variable de entorno `API_URL` con la dirección interna de la API, sondeo de salud en `/` (así una revisión defectuosa no recibe tráfico), modo de una sola revisión activa.
-3. App registrada en Entra ID con credencial federada: entidad `repo:<dueño>/blackhellheim-web:environment:produccion` (el trabajo usa el entorno `produccion`, por eso el sujeto OIDC es de entorno y no de rama). Rol Contributor solo sobre la Container App.
-4. Tras la primera publicación, volver público el paquete `blackhellheim-web` en GHCR para que Azure lo descargue sin credenciales.
+Orden de ejecución (con `az login` hecho; los scripts son idempotentes):
+
+1. **Primero el API**: `crear-recursos.sh` del backend (grupo `bhh-prod-rg`, entorno `bhh-prod-env`, app `bhh-api`). El web se crea **después**: `crear-web.sh` falla si `bhh-api` no existe.
+2. `scripts/azure/crear-web.sh`: Container App `bhh-web` en el mismo grupo y entorno (región leída del entorno), ingreso externo HTTPS, puerto 8080, 0.25 vCPU / 0.5 Gi, 0–1 réplicas, una sola revisión, `API_URL=http://bhh-api` (nombre corto de la app dentro del entorno, sin barra final). Arranca con la imagen de ejemplo de Microsoft; el puerto 8080 ya queda fijado porque el workflow solo ejecuta `az containerapp update --image` y no cambia puerto ni variables. Hasta el primer despliegue la URL dará error: es esperado.
+3. `scripts/azure/configurar-oidc-web.sh`: app de Entra ID con credencial federada `repo:MiguelDotDev/blackhellheim-web:environment:produccion` y Contributor solo sobre la Container App `bhh-web`. Imprime las cinco variables de GitHub.
+4. Crear en GitHub el entorno `produccion` y las variables (sección siguiente), y hacer push a `main`.
+5. Tras la primera publicación, volver público el paquete `blackhellheim-web` en GHCR para que Azure lo descargue sin credenciales.
+
+Sin sondeo de salud: `az containerapp create` no tiene opciones para sondeos (solo YAML), así que no se configura; el workflow comprueba `/` tras desplegar.
+
+### Riesgos conocidos
+
+- **504 por arranque en frío**: el API (min-replicas 0) y la base serverless (autopausa) tardan en despertar y el `proxy_read_timeout` por defecto de nginx es 60 s. La primera petición a `/api/` tras inactividad puede dar 504; reintentar suele bastar. Si molesta, subir `proxy_read_timeout` en `nginx/default.conf.template` o dar `min-replicas 1` al API.
+- **Orden de creación**: nginx resuelve `API_URL` al arrancar; si el API no existe el contenedor no arranca. Crear siempre el API antes que el web.
 
 ## Variables de GitHub (no secretas; Settings → Secrets and variables → Actions → Variables)
 
