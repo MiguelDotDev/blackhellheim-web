@@ -14,7 +14,7 @@ Meta: Backend en Docker, SDD y Jira listos. Rama: `sprint/01`.
 
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
-| 1 | api + web | DOC | 3 | M | Como desarrolladora, quiero la constitución y las plantillas de Spec Kit en ambos repos para que cada cambio nazca de una spec. | constitucion.md aprobada y /speckit.specify corre en los dos repos. |  | Por auditar |
+| 1 | api + web | DOC | 3 | M | Como desarrolladora, quiero la constitución y las plantillas de Spec Kit en ambos repos para que cada cambio nazca de una spec. | constitucion.md aprobada y /speckit.specify corre en los dos repos. | specs/000-fundacion | Hecha |
 | 2 | api | BE | 9 | M | Quiero la solución .NET 10 en capas con Mediator y comportamientos de pipeline. | Compila, y una consulta de ejemplo cruza API, Aplicación y Dominio sin violar dependencias. |  | Pendiente |
 | 3 | api | BE DB | 8 | M | Quiero SQL Server en Compose, EF Core, migración inicial y datos semilla. | docker compose up crea la base y aplica la migración con semillas. |  | Pendiente |
 | 4 | api | BE | 4 | M | Quiero OpenAPI con Scalar y errores como ProblemDetails. | /scalar muestra el contrato y un error de validación devuelve ProblemDetails. |  | Pendiente |
@@ -31,7 +31,7 @@ Meta: CI del backend, esqueleto Vue con ambientes, cliente y mock. Rama: `sprint
 | 7 | web | FE | 9 | M | Quiero el esqueleto Vue 3 con TypeScript, Vite, Pinia, Router, Tailwind y capas FSD. | npm run lint falla si una capa importa de otra superior. | specs/007-esqueleto-vue-fsd | Hecha |
 | 8 | web | FE | 3 | M | Quiero ambientes de desarrollo, prueba y producción. | La URL del API cambia según .env.development, .env.test y .env.production. | specs/008-ambientes | Hecha |
 | 9 | web | FE | 6 | M | Quiero un cliente API tipado generado desde OpenAPI y un servidor mock. | El cliente se regenera con un comando y el mock responde un endpoint de ejemplo. | specs/009-cliente-api-mock | Hecha |
-| 10 | web | CI | 5 | M | Quiero CI del frontend con lint, tipos, pruebas y build. | Cada push corre las cuatro verificaciones. | specs/010-ci-frontend | En progreso |
+| 10 | web | CI | 5 | M | Quiero CI del frontend con lint, tipos, pruebas y build. | Cada push corre las cuatro verificaciones. | specs/010-ci-frontend | Hecha |
 
 ## Sprint 3 · 2–8 oct · 31 h
 
@@ -40,8 +40,8 @@ Meta: Acceso con JWT de punta a punta y primer despliegue a Azure. Rama: `sprint
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
 | 13 | api | BE DB | 12 | M | Como cliente, quiero registrarme e iniciar sesión con JWT de acceso corto y refresh rotativo, con roles Cliente y Administrador. | Un refresh reusado revoca la familia de tokens; pruebas de caso exitoso, error y validación. |  | Pendiente |
-| 14 | web | FE | 9 | M | Como cliente, quiero pantallas de acceso y que mi sesión se renueve sola. | Tras caducar el acceso, la siguiente petición se repite con un token nuevo sin pedir contraseña. | specs/014-acceso-sesion | Pendiente |
-| 25 | api + web | CI | 10 | M | Quiero un primer despliegue continuo a Azure con la dirección por defecto, incluyendo el proxy de /api. | Un push a la rama principal publica API y web como contenedores; la web carga por HTTPS y /api responde a través de ella. | specs/025-despliegue-azure | Pendiente |
+| 14 | web | FE | 9 | M | Como cliente, quiero pantallas de acceso y que mi sesión se renueve sola. | Tras caducar el acceso, la siguiente petición se repite con un token nuevo sin pedir contraseña. | specs/014-acceso-sesion | En progreso |
+| 25 | api + web | CI | 10 | M | Quiero un primer despliegue continuo a Azure con la dirección por defecto, incluyendo el proxy de /api. | Un push a la rama principal publica API y web como contenedores; la web carga por HTTPS y /api responde a través de ella. | specs/025-despliegue-azure | En progreso |
 
 ## Sprint 4 · 9–15 oct · 36 h
 

@@ -31,11 +31,24 @@ La guía de capas y de reglas de importación está en [`src/LEEME.md`](src/LEEM
 
 ## Cliente de API y mock
 
-- `npm run api:generar` regenera `src/compartido/api/generado/esquema.d.ts` desde `specs/009-cliente-api-mock/contratos/openapi.json` (copia del backend; no se edita aquí). Una prueba falla si los tipos versionados no corresponden al contrato.
-- `npm run mock` levanta el mock en `http://localhost:4010` (otro puerto con `MOCK_PUERTO`). Responde `GET /salud`, `GET /salud/base` y `GET /tiendas/{codigo}` (`MEX` existe).
+- `npm run api:generar` regenera `src/compartido/api/generado/esquema.d.ts` desde `specs/014-acceso-sesion/contratos/openapi.json` (copia del backend; no se edita aquí). Una prueba falla si los tipos versionados no corresponden al contrato.
+- `npm run mock` levanta el mock en `http://localhost:4010` (otro puerto con `MOCK_PUERTO`). Responde `GET /salud`, `GET /salud/base`, `GET /tiendas/{codigo}` (`MEX` existe) y la autenticación (ver abajo).
 - Para trabajar sin backend usa dos terminales: `npm run mock` y `npm run dev`.
 - Actualizar el contrato: copia el nuevo `openapi.json` del backend, ejecuta `npm run api:generar`, corrige `mock/respuestas.ts` si `npm run type-check` o `tests/api/mock-cobertura.test.ts` fallan, y haz commit de ambos.
 - Uso en código: `import { crearClienteApi } from '@/compartido/api'`.
+
+## Sesión y mock de autenticación (HU-14)
+
+- Operaciones del contrato: `POST /auth/registro`, `/auth/inicio-sesion`, `/auth/renovar`, `/auth/cerrar-sesion` y `GET /auth/yo`.
+- El token de acceso vive solo en memoria (`useSesion` de `@/entidades/sesion`); el refresh viaja en cookie HttpOnly. Al cargar, `arrancar()` intenta una renovación silenciosa.
+- Para peticiones autenticadas usa `crearApiConSesion()` (`@/aplicacion/proveedores/api`): añade `Authorization` y, ante 401, renueva una sola vez y repite.
+- Rutas privadas: `meta: { requiereSesion: true }` o `meta: { rol: 'Administrador' }`; llevan a `/acceso?destino=…`.
+- Mock: contraseña de al menos 8 caracteres; los datos viven en memoria (se pierden al reiniciar). La cabecera `x-mock-token: caducado` fuerza 401 en `GET /auth/yo`. CORS con credenciales para `http://localhost:5173` (cambia con `MOCK_ORIGENES`, separados por comas).
+- Hook de «sesión iniciada»: `useSesion().alIniciarSesion(fn)`.
+
+## Despliegue
+
+Imagen Docker (nginx) y despliegue a Azure desde `main`: ver [`docs/despliegue-azure.md`](docs/despliegue-azure.md).
 
 ## Integración continua
 
