@@ -19,7 +19,7 @@ I, II, III, V, VI, VII, VIII, IX, X y XI cumplen; ver decisiones.
 
 ## Licencias (principio VIII)
 
-Sin dependencias nuevas.
+Posibles dependencias de desarrollo/ejecución: `fake-indexeddb` (MIT, desarrollo) o `idb` (ISC); se decide en T005, verificando licencia y árbol antes de instalar.
 
 ## Estructura
 

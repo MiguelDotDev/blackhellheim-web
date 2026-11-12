@@ -17,12 +17,12 @@
 
 ## Fase 3: Sesión y retorno (US1)
 
-- [ ] T006 [FE] Escribir primero pruebas de guardia del checkout (visitante → acceso con destino, carrito vacío → catálogo, retorno con el carrito intacto) e implementar la ruta con `meta.requiereSesion` (FR-001)
+- [ ] T006 [FE] Escribir primero pruebas de guardia del checkout (visitante → acceso con destino, carrito vacío → catálogo, retorno con el carrito intacto, variante sin existencia → aviso y vuelta al carrito, renovación de sesión que conserva lo capturado) e implementar la ruta con `meta.requiereSesion` (FR-001)
 
 ## Fase 4: Dirección, envío y resumen (US2, US3)
 
-- [ ] T007 [FE] Escribir primero pruebas del formulario de dirección (errores por campo, del servidor, accesibilidad) e implementar `funcionalidades/direccion-envio` (FR-003, FR-006)
-- [ ] T008 [FE] Escribir primero pruebas de cotización (opciones, error con reintento, recotizar al cambiar, total descartado) e implementar `funcionalidades/cotizar-envio` y el resumen; prueba de que no hay aritmética de dinero (FR-002, FR-004, FR-005)
+- [ ] T007 [FE] Escribir primero pruebas del formulario de dirección (errores por campo, del servidor, accesibilidad, sugerencia por código postal solo si el contrato la ofrece) e implementar `funcionalidades/direccion-envio` (FR-003, FR-006)
+- [ ] T008 [FE] Escribir primero pruebas de cotización (opciones, error con reintento, recotizar al cambiar, total descartado, Pagar deshabilitado sin total válido) e implementar `funcionalidades/cotizar-envio` y el resumen; prueba de que no hay aritmética de dinero (FR-002, FR-004, FR-005)
 - [ ] T009 [FE] Dejar el botón Pagar con el gancho `onPagar` deshabilitado hasta HU-29 (FR-007)
 
 ## Fase 5: Integración

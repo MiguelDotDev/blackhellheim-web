@@ -9,7 +9,7 @@ Páginas públicas de catálogo y detalle con selector de variante, que consumen
 ## Decisiones
 
 - **D1 Variante como estado local**: la variante elegida vive en el componente y se pasa por identificadores al carrito; no se persiste.
-- **D2 Precios**: se formatean con `Intl.NumberFormat('es-MX')` sobre el número recibido; sin sumas ni descuentos.
+- **D2 Precios**: se formatean con `Intl.NumberFormat('es-MX')` sobre el número recibido; sin sumas ni descuentos. Si el contrato entrega el precio en unidades menores o ya formateado, se muestra tal cual lo define el contrato (se confirma en T002); el formato es solo presentación y nunca recalcula ni redondea el importe.
 - **D3 Filtros en la dirección**: `vue-router` con `query`, sin dependencias nuevas.
 
 ## Verificación de la constitución
