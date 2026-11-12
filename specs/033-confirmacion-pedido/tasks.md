@@ -16,7 +16,7 @@
 
 ## Fase 3: Entidad y página
 
-- [ ] T005 [FE] Escribir primero la prueba de etiquetas (todo estado del enum tiene texto; desconocido → genérico) e implementar `entidades/pedido` (FR-003)
+- [ ] T005 [FE] Escribir primero la prueba de etiquetas (todo estado del enum tiene texto; desconocido → genérico) e implementar `entidades/pedido`, con el estado del pedido en un store reutilizable por HU-34 y HU-39 (FR-003, FR-006)
 - [ ] T006 [FE] Escribir primero pruebas de la página (datos, guía pendiente, 404, enlace `https:` con `rel`, estado no solo por color, sin sesión → acceso) e implementar `paginas/pedido` (FR-001, FR-002, FR-004, FR-005, FR-006)
 
 ## Fase 4: Integración
