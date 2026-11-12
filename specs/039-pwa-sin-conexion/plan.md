@@ -18,7 +18,7 @@ I, II, III, V, VI, VII, VIII, IX, X y XI cumplen; ver decisiones.
 
 ## Licencias (principio VIII)
 
-Sin dependencias nuevas.
+Dependencias nuevas candidatas (licencia y árbol a verificar en T002 antes de instalar): `vite-plugin-pwa` (MIT), Workbox (MIT) y `fake-indexeddb` (MIT, solo desarrollo).
 
 ## Estructura
 

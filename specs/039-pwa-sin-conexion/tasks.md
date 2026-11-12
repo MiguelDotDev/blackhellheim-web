@@ -12,13 +12,13 @@
 
 - [ ] T002 [FE] Verificar la licencia de `vite-plugin-pwa`, Workbox y `fake-indexeddb` y su árbol, instalarlos y anotarlas en `plan.md` (FR-002)
 - [ ] T003 [FE] Escribir primero pruebas de configuración (manifiesto con nombre, iconos, `standalone`, colores; el service worker no cachea escrituras de `/api`) e implementar la configuración del plugin (FR-001, FR-004)
-- [ ] T004 [FE] Aviso de nueva versión y actualización controlada, con prueba (FR-006)
+- [ ] T004 [FE] Aviso de nueva versión y actualización controlada, con prueba de que el carrito local se conserva tras actualizar (US1.3, FR-006)
 
 ## Fase 3: Datos sin conexión (US2, US3)
 
 - [ ] T005 [FE] Escribir primero pruebas del almacén local por usuario (guardar, leer, borrar al cerrar sesión, sin tokens) e implementarlo (FR-003, FR-004, FR-007)
-- [ ] T006 [FE] Integrar el almacén en pedidos (HU-33/34), avisos (HU-35, si ya existe) y catálogo visto (HU-23) con «visto el <fecha>» (FR-003)
-- [ ] T007 [FE] Página y aviso de sin conexión accesibles con pruebas (FR-005)
+- [ ] T006 [FE] Integrar el almacén en pedidos (HU-33/34), avisos (HU-35, si ya existe) y catálogo visto (HU-23) con «visto el <fecha>», y reactualizar los datos y retirar el aviso al recuperar la red, con prueba (US2.3, FR-003)
+- [ ] T007 [FE] Página y aviso de sin conexión accesibles con pruebas; sin conexión bloquear comprar/pagar explicando el motivo y conservar el carrito; si el almacenamiento falla o está lleno, degradar a solo en línea con aviso (casos límite, FR-005)
 
 ## Fase 4: Documentación y dispositivo
 
@@ -29,4 +29,4 @@
 ## Fase final: Cierre
 
 - [ ] T011 [FE] `npm run lint`, `npm run type-check`, `npm run test` y `npm run build` en verde; README actualizado con lo nuevo
-- [ ] T012 [FE] Fila de HU-39 en `docs/scrum/backlog.md`: Estado = Por auditar/En progreso (hay tareas [MANUAL]); commit `HU-39: PWA instalable y uso sin conexión`; avisar «HU-39 terminada. Haz push a sprint/11»
+- [ ] T012 [FE] Fila de HU-39 en `docs/scrum/backlog.md`: Estado = En progreso (hay tareas [MANUAL] pendientes); commit `HU-39: PWA instalable y uso sin conexión`; avisar «HU-39 terminada. Haz push a sprint/11»
