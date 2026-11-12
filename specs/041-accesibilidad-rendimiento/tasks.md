@@ -14,8 +14,8 @@
 
 ## Fase 3: Accesibilidad (US1)
 
-- [ ] T003 [FE] Escribir primero pruebas con axe sobre los componentes y páginas principales y corregir las fallas críticas (FR-002)
-- [ ] T004 [FE] Actualizar la prueba de contraste con los pares reales y el recorrido por teclado de la compra (FR-003, FR-004)
+- [ ] T003 [FE] Escribir primero pruebas con axe sobre los componentes y páginas principales y corregir las fallas críticas; los falsos positivos se documentan con justificación en `docs/calidad/` (FR-002)
+- [ ] T004 [FE] Actualizar la prueba de contraste con el 100 % de los pares reales (SC-002) y el recorrido por teclado de la compra (FR-003, FR-004)
 
 ## Fase 4: Rendimiento (US2)
 

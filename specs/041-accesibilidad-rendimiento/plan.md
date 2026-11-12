@@ -17,7 +17,7 @@ I, II, III, V, VI, VII, VIII, IX, X y XI cumplen; ver decisiones.
 
 ## Licencias (principio VIII)
 
-Sin dependencias nuevas.
+Dependencias nuevas candidatas, solo de desarrollo: Lighthouse (Apache-2.0) y `axe-core` (MPL-2.0); licencia y árbol se verifican en T002 antes de instalar.
 
 ## Estructura
 
