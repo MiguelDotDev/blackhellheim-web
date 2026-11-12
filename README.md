@@ -31,7 +31,7 @@ La guía de capas y de reglas de importación está en [`src/LEEME.md`](src/LEEM
 
 ## Cliente de API y mock
 
-- `npm run api:generar` regenera `src/compartido/api/generado/esquema.d.ts` desde `specs/014-acceso-sesion/contratos/openapi.json` (copia del backend; no se edita aquí). Una prueba falla si los tipos versionados no corresponden al contrato.
+- `npm run api:generar` regenera `src/compartido/api/generado/esquema.d.ts` desde `specs/018-editor-disenos/contratos/openapi.json` (copia del backend; no se edita aquí). Una prueba falla si los tipos versionados no corresponden al contrato.
 - `npm run mock` levanta el mock en `http://localhost:4010` (otro puerto con `MOCK_PUERTO`). Responde `GET /salud`, `GET /salud/base`, `GET /tiendas/{codigo}` (`MEX` existe) y la autenticación (ver abajo).
 - Para trabajar sin backend usa dos terminales: `npm run mock` y `npm run dev`.
 - Actualizar el contrato: copia el nuevo `openapi.json` del backend, ejecuta `npm run api:generar`, corrige `mock/respuestas.ts` si `npm run type-check` o `tests/api/mock-cobertura.test.ts` fallan, y haz commit de ambos.
@@ -57,3 +57,7 @@ Imagen Docker (nginx) y despliegue a Azure desde `main`: ver [`docs/despliegue-a
 - **Leer un fallo**: en la pestaña Actions abre el control en rojo; solo falla el que corresponde.
 - **Reproducir en local**: `npm ci` y luego el comando del control, por ejemplo `npm run lint`.
 - **Exigirlos**: en Settings → Branches, protege `main`, `release` y `developer` exigiendo pull request y los cuatro controles.
+
+## Panel de diseños (HU-18)
+
+Rutas `/admin/disenos`, `/admin/disenos/nuevo` y `/admin/disenos/:id` (rol Administrador). El formulario sube arte PNG, avisa si ≥ 85 % de los píxeles opacos son oscuros y hay prenda negra elegida, y guarda con `If-Match` (412 → aviso de conflicto). Con el mock, un correo `admin@…` se registra como Administrador. Pendiente de confirmar con el backend: resolución mínima y límite de imágenes (valores provisionales en `lib/validar-archivo.ts`).

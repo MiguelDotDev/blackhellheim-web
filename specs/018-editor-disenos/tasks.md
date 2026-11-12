@@ -4,32 +4,32 @@
 
 ## Fase 1: Preparación
 
-- [ ] T001 [MANUAL] Copiar el `openapi.json` del backend con diseños, subida de arte y catálogo a `specs/018-editor-disenos/contratos/openapi.json` y confirmar el umbral de «arte negro»
-- [ ] T002 [FE] Apuntar `api:generar` al contrato vigente, regenerar y dejar en verde `tests/api/esquema-actualizado.test.ts`; confirmar que HU-14 y HU-11 están hechas (si no, detener y avisar)
+- [X] T001 [MANUAL] Copiar el `openapi.json` del backend con diseños, subida de arte y catálogo a `specs/018-editor-disenos/contratos/openapi.json` y confirmar el umbral de «arte negro»
+- [X] T002 [FE] Apuntar `api:generar` al contrato vigente, regenerar y dejar en verde `tests/api/esquema-actualizado.test.ts`; confirmar que HU-14 y HU-11 están hechas (si no, detener y avisar)
 
 ## Fase 2: Mock
 
-- [ ] T003 [FE] Escribir primero `tests/api/mock-disenos.test.ts` (crear, listar, obtener, actualizar, subida de arte, errores 400/403/409 con `ProblemDetails`) y ampliar `mock/respuestas.ts` con `satisfies`
+- [X] T003 [FE] Escribir primero `tests/api/mock-disenos.test.ts` (crear, listar, obtener, actualizar, subida de arte, errores 400/403/409 con `ProblemDetails`) y ampliar `mock/respuestas.ts` con `satisfies`
 
 ## Fase 3: Aviso de arte oscuro (US3)
 
-- [ ] T004 [FE] Escribir primero `lib/analizar-arte.test.ts` (negro opaco → aviso; claro → no; transparente → ignora píxeles; umbral exacto; imagen vacía)
-- [ ] T005 [FE] Implementar `analizar-arte.ts` y el componente `AvisoArteOscuro` con `role="status"` y texto (no solo color)
+- [X] T004 [FE] Escribir primero `lib/analizar-arte.test.ts` (negro opaco → aviso; claro → no; transparente → ignora píxeles; umbral exacto; imagen vacía)
+- [X] T005 [FE] Implementar `analizar-arte.ts` y el componente `AvisoArteOscuro` con `role="status"` y texto (no solo color)
 
 ## Fase 4: Formulario y subida (US1, US2)
 
-- [ ] T006 [FE] Escribir primero pruebas de validación de archivos (tipo, tamaño, resolución) y del estado de subida (progreso, fallo, reintento por archivo, reordenar, quitar; imagen totalmente transparente rechazada con motivo; límite de imágenes del contrato con mensaje claro)
-- [ ] T007 [FE] Implementar `ui/` del formulario (campos, imágenes, colores, tallas), validación por campo, errores del servidor, deshabilitar envío y foco al primer error; sin campos de precio (prueba que lo comprueba); prueba de que una renovación de sesión a mitad del formulario conserva lo escrito y de que todo el formulario se completa solo con teclado (SC-003)
-- [ ] T008 [FE] Implementar la entidad `diseno` y la llamada de guardado con el cliente generado
+- [X] T006 [FE] Escribir primero pruebas de validación de archivos (tipo, tamaño, resolución) y del estado de subida (progreso, fallo, reintento por archivo, reordenar, quitar; imagen totalmente transparente rechazada con motivo; límite de imágenes del contrato con mensaje claro)
+- [X] T007 [FE] Implementar `ui/` del formulario (campos, imágenes, colores, tallas), validación por campo, errores del servidor, deshabilitar envío y foco al primer error; sin campos de precio (prueba que lo comprueba); prueba de que una renovación de sesión a mitad del formulario conserva lo escrito y de que todo el formulario se completa solo con teclado (SC-003)
+- [X] T008 [FE] Implementar la entidad `diseno` y la llamada de guardado con el cliente generado
 
 ## Fase 5: Edición y rutas (US4)
 
-- [ ] T009 [FE] Escribir primero pruebas de carga de un diseño, guardado y conflicto 409 (solo si el contrato define versión/ETag, plan D5; si no, anotar y omitir); implementar `paginas/admin-disenos` y las rutas con `meta.rol = Administrador`
+- [X] T009 [FE] Escribir primero pruebas de carga de un diseño, guardado y conflicto 409 (solo si el contrato define versión/ETag, plan D5; si no, anotar y omitir); implementar `paginas/admin-disenos` y las rutas con `meta.rol = Administrador`
 
 ## Fase 6: Cierre
 
-- [ ] T010 [FE] `npm run lint`, `type-check`, `test`, `build` en verde; README: sección del panel
-- [ ] T011 [FE] Fila de HU-18 en `backlog.md`: Spec y Estado = Hecha (si no quedan `[MANUAL]`); commit `HU-18: editor de diseños`; avisar «HU-18 terminada. Haz push a sprint/05»
+- [X] T010 [FE] `npm run lint`, `type-check`, `test`, `build` en verde; README: sección del panel
+- [X] T011 [FE] Fila de HU-18 en `backlog.md`: Spec y Estado = Hecha (si no quedan `[MANUAL]`); commit `HU-18: editor de diseños`; avisar «HU-18 terminada. Haz push a sprint/05»
 - [ ] T012 [MANUAL] Probar con la API real y una imagen real de arte negro sobre prenda negra
 
 ## Dependencias
