@@ -38,3 +38,7 @@ mock/respuestas.ts, tests/api/mock-auth.test.ts, tests/sesion/*.test.ts
 
 - **R-1**: el contrato real de HU-13 puede diferir de lo supuesto (nombres de operaciones); se ajusta tras copiarlo, no antes.
 - **R-2**: cookies `SameSite` en desarrollo (mock en otro puerto) ⇒ el mock es de origen cruzado y requiere `Access-Control-Allow-Credentials` con origen explícito, no `*`.
+
+## Operaciones reales del contrato (T002)
+
+`registrar` (`POST /auth/registro`, 201) · `iniciarSesion` (`POST /auth/inicio-sesion`, 200/401/423) · `renovarSesion` (`POST /auth/renovar`) · `cerrarSesion` (`POST /auth/cerrar-sesion`, 204) · `obtenerPerfil` (`GET /auth/yo`, `PerfilDto`). `SesionDto` = `tokenAcceso`, `expiraEnSegundos`, `rol` (sin correo ni id: el perfil se pide a `/auth/yo` tras iniciar o renovar). Los errores de validación llegan en `ProblemDetails.errores`. El contrato no declara `security`; el cliente envía `Authorization: Bearer` por convención.

@@ -1,0 +1,15 @@
+<template>
+  <!-- PROVISIONAL (docs/diseno/marca.md §4). Usa currentColor: el color lo da la clase de texto. -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 100 105"
+    role="img"
+    aria-label="BlackHellHeim"
+    fill="currentColor"
+  >
+    <path
+      fill-rule="evenodd"
+      d="M10 8 L20 15 L30 8 L40 15 L50 8 L60 15 L70 8 L80 15 L90 8 V55 C90 78 70 90 50 97 C30 90 10 78 10 55 Z M24 32 H40 L46 38 V48 L42 52 L46 56 V66 L40 72 H24 Z M32 39 V47 H38 V39 Z M32 57 V65 H38 V57 Z M54 32 H62 V48 H68 V32 H76 V72 H68 V56 H62 V72 H54 Z"
+    />
+  </svg>
+</template>

@@ -14,10 +14,12 @@
     "lint": "eslint .",
     "type-check": "vue-tsc --build",
     "test": "vitest run",
-    "api:generar": "openapi-typescript specs/009-cliente-api-mock/contratos/openapi.json -o src/compartido/api/generado/esquema.d.ts",
+    "api:generar": "openapi-typescript specs/014-acceso-sesion/contratos/openapi.json -o src/compartido/api/generado/esquema.d.ts",
     "mock": "node mock/iniciar.ts"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource/anton": "^5.3.0",
     "openapi-fetch": "^0.17.0",
     "pinia": "^4.1.0",
     "vue": "^3.5.45",
