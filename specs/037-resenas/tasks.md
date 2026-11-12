@@ -17,11 +17,11 @@
 ## Fase 3: Leer y escribir
 
 - [ ] T005 [FE] Escribir primero pruebas de la lista y del promedio (valores del backend, vacío, paginación) e integrarlas en el detalle de HU-23 (FR-001, FR-005)
-- [ ] T006 [FE] Escribir primero pruebas del formulario (elegible/no elegible, estrellas accesibles, errores por campo, un solo envío, comentario con HTML como texto) e implementarlo (FR-002, FR-003, FR-005)
+- [ ] T006 [FE] Escribir primero pruebas del formulario (elegible/no elegible, estrellas accesibles, errores por campo, un solo envío, comentario con HTML como texto, contador accesible del máximo del contrato) e implementarlo (FR-002, FR-003, FR-005)
 
 ## Fase 4: Moderación
 
-- [ ] T007 [FE] Escribir primero pruebas de ocultar/mostrar y del rol e implementar `paginas/admin-resenas` (FR-004, FR-005)
+- [ ] T007 [FE] Escribir primero pruebas de ocultar/mostrar, del rol con «sin permiso» y del refresco si una reseña se oculta mientras se lee, e implementar `paginas/admin-resenas` (FR-004, FR-005)
 
 ## Fase 5: Integración
 

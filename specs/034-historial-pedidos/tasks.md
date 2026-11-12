@@ -14,7 +14,7 @@
 
 ## Fase 3: Lista y detalle
 
-- [ ] T003 [FE] Escribir primero pruebas de la lista (orden, paginación en la dirección, vacío, error con reintento, fuera de rango, sin sesión, sin cálculo de totales) e implementar `paginas/historial-pedidos` (FR-001, FR-002, FR-003, FR-004, FR-005)
+- [ ] T003 [FE] Escribir primero pruebas de la lista (orden, paginación en la dirección, vacío, error con reintento, fuera de rango → última página válida, filtro por estado si el contrato lo trae, fecha con `Intl` en zona de México, sin sesión, sin cálculo de totales) e implementar `paginas/historial-pedidos` (FR-001, FR-002, FR-003, FR-004, FR-005)
 - [ ] T004 [FE] Enlace al detalle de HU-33 y prueba de navegación por teclado de la paginación (FR-002, FR-004)
 
 ## Fase 4: Integración

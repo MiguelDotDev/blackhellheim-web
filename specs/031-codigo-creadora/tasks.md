@@ -16,11 +16,11 @@
 
 ## Fase 3: Checkout (US1)
 
-- [ ] T005 [FE] Escribir primero pruebas del campo de código (aceptado, rechazado con motivo, vacío, botón deshabilitado en curso, el total no cambia, se envía con el pedido, no se envía descuento) e implementar `funcionalidades/codigo-creadora` y su inserción en el checkout (FR-001, FR-002, FR-003)
+- [ ] T005 [FE] Escribir primero pruebas del campo de código (aceptado, rechazado con motivo, vacío, botón deshabilitado en curso, el total no cambia, se envía con el pedido, no se envía descuento, normalización según el contrato, código quitado → pedido sin código) e implementar `funcionalidades/codigo-creadora` y su inserción en el checkout (FR-001, FR-002, FR-003)
 
 ## Fase 4: Panel (US2)
 
-- [ ] T006 [FE] Escribir primero pruebas del panel (crear, error por campo, lista, rol Administrador, accesibilidad) e implementar `paginas/admin-creadoras` (FR-004, FR-005, FR-007)
+- [ ] T006 [FE] Escribir primero pruebas del panel (crear, error por campo, lista, editar/desactivar si el contrato lo permite, rol Administrador con «sin permiso», accesibilidad) e implementar `paginas/admin-creadoras` (FR-004, FR-005, FR-007)
 
 ## Fase 5: Integración
 
@@ -29,4 +29,4 @@
 ## Fase final: Cierre
 
 - [ ] T008 [FE] `npm run lint`, `npm run type-check`, `npm run test` y `npm run build` en verde; README actualizado con lo nuevo
-- [ ] T009 [FE] Fila de HU-31 en `docs/scrum/backlog.md`: Estado = Por auditar/En progreso (hay tareas [MANUAL]); commit `HU-31: Código de creadora en el checkout y su administrac`; avisar «HU-31 terminada. Haz push a sprint/09»
+- [ ] T009 [FE] Fila de HU-31 en `docs/scrum/backlog.md`: Estado = Por auditar/En progreso (hay tareas [MANUAL]); commit `HU-31: Código de creadora en el checkout y su administración`; avisar «HU-31 terminada. Haz push a sprint/09»
