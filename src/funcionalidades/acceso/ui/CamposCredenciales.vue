@@ -5,11 +5,15 @@ const contrasena = defineModel<string>('contrasena', { required: true })
 </script>
 
 <template>
-  <div>
-    <label :for="`${idBase}-correo`">Correo electrónico</label>
+  <div class="flex flex-col gap-1">
+    <label
+      class="font-medium"
+      :for="`${idBase}-correo`"
+    >Correo electrónico</label>
     <input
       :id="`${idBase}-correo`"
       v-model="correo"
+      class="rounded border border-gray-400 px-3 py-2 aria-invalid:border-red-700"
       name="correo"
       type="email"
       autocomplete="email"
@@ -24,11 +28,15 @@ const contrasena = defineModel<string>('contrasena', { required: true })
       {{ errores.correo[0] }}
     </p>
   </div>
-  <div>
-    <label :for="`${idBase}-contrasena`">Contraseña</label>
+  <div class="flex flex-col gap-1">
+    <label
+      class="font-medium"
+      :for="`${idBase}-contrasena`"
+    >Contraseña</label>
     <input
       :id="`${idBase}-contrasena`"
       v-model="contrasena"
+      class="rounded border border-gray-400 px-3 py-2 aria-invalid:border-red-700"
       name="contrasena"
       type="password"
       :autocomplete="autocompletarContrasena"

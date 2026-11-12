@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
-import { BotonCerrarSesion } from '@/funcionalidades/acceso'
+import { EncabezadoSesion } from '@/widgets/encabezado-sesion'
 </script>
 
 <template>
-  <BotonCerrarSesion />
+  <EncabezadoSesion />
   <RouterView />
 </template>

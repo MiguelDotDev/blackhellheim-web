@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory, type RouterHistory } from 'vue-router'
 import { useSesion } from '@/entidades/sesion'
 import { PaginaAcceso } from '@/paginas/acceso'
+import { PaginaCuenta } from '@/paginas/cuenta'
 import { PaginaInicio } from '@/paginas/inicio'
 import { PaginaNoEncontrada } from '@/paginas/no-encontrada'
 import { PaginaSinPermiso } from '@/paginas/sin-permiso'
@@ -19,6 +20,7 @@ export function crearEnrutador(historial: RouterHistory = createWebHistory()) {
     routes: [
       { path: '/', name: 'inicio', component: PaginaInicio },
       { path: '/acceso', name: 'acceso', component: PaginaAcceso },
+      { path: '/cuenta', name: 'cuenta', component: PaginaCuenta, meta: { requiereSesion: true } }, // TEMPORAL: se sustituye en la HU-11/HU-18
       { path: '/sin-permiso', name: 'sin-permiso', component: PaginaSinPermiso },
       { path: '/:rutaNoEncontrada(.*)*', name: 'no-encontrada', component: PaginaNoEncontrada },
     ],

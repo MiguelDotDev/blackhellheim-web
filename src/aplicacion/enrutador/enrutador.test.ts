@@ -54,3 +54,10 @@ describe('guardia de rutas', () => {
     expect(a.currentRoute.value.name).toBe('admin')
   })
 })
+
+it('/cuenta es privada: un visitante va a /acceso?destino=/cuenta', async () => {
+  setActivePinia(createPinia())
+  const e = crearEnrutador(createMemoryHistory())
+  await e.push('/cuenta')
+  expect(e.currentRoute.value.query.destino).toBe('/cuenta')
+})

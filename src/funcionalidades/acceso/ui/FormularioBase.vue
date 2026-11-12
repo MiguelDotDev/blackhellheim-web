@@ -43,6 +43,7 @@ async function alEnviar() {
 <template>
   <form
     :id="idBase"
+    class="flex flex-col gap-4 rounded-lg border border-gray-300 bg-white p-6"
     novalidate
     @submit.prevent="alEnviar"
   >
@@ -50,6 +51,7 @@ async function alEnviar() {
     <p
       v-if="mensaje"
       role="alert"
+      class="rounded border border-red-700 bg-red-50 p-3 text-red-800"
     >
       {{ mensaje }}
     </p>
@@ -63,8 +65,9 @@ async function alEnviar() {
     <button
       type="submit"
       :disabled="enviando"
+      class="rounded bg-gray-900 px-4 py-2 font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
     >
-      {{ boton }}
+      {{ enviando ? 'Enviando…' : boton }}
     </button>
   </form>
 </template>
