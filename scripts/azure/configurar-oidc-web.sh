@@ -22,7 +22,7 @@ fi
 
 id_web="$(az containerapp show -n "$BHH_APP_WEB" -g "$BHH_RG" --query id -o tsv)" \
   || fallar "No existe '$BHH_APP_WEB': ejecuta antes crear-web.sh."
-az role assignment create --assignee "$id_app" --role Contributor --scope "$id_web" -o none
+az role assignment create --assignee "$id_app" --role Contributor --scope "$(az group show -n "$BHH_RG" --query id -o tsv)" -o none
 
 echo "AZURE_CLIENT_ID=$id_app"
 echo "AZURE_TENANT_ID=$(az account show --query tenantId -o tsv)"
