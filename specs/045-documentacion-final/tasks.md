@@ -16,7 +16,7 @@
 
 - [ ] T003 [FE] Completar el README con requisitos, comandos, ambientes, mock, cliente, CI, despliegue, PWA y FSD (FR-001)
 - [ ] T004 [FE] Generar `docs/scrum/sprint-NN.md` desde la plantilla con meta, historias y horas del backlog (FR-002)
-- [ ] T005 [FE] Crear `docs/scrum/evidencias-sdd.md` con el índice de specs, planes, tareas e informes (FR-004)
+- [ ] T005 [FE] Crear `docs/scrum/evidencias-sdd.md` con el índice de specs, planes, tareas e informes, marcando como pendientes las HU no hechas y resumiendo hallazgos de análisis y decisiones por HU (US2.3, FR-004)
 
 ## Fase 4: Aportes de la desarrolladora
 
