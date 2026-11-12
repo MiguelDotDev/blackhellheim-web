@@ -1,0 +1,14 @@
+# mock/ y tests/ se copian a propósito: `vue-tsc --build` (parte de npm run build) los tipa.
+node_modules
+dist
+coverage
+.git
+.github
+.claude
+.specify
+specs
+docs
+.env
+.env*.local
+*.log
+*.tsbuildinfo

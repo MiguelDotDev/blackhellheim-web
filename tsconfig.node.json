@@ -13,7 +13,8 @@
     "allowJs": true,
     "noEmit": true,
     "lib": [
-      "ES2023"
+      "ES2023",
+      "DOM"
     ],
     "types": [
       "node",

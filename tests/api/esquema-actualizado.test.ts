@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { expect, it } from 'vitest'
 
-const contrato = 'specs/009-cliente-api-mock/contratos/openapi.json'
+const contrato = 'specs/018-editor-disenos/contratos/openapi.json'
 const versionado = readFileSync('src/compartido/api/generado/esquema.d.ts', 'utf8')
 
 it('los tipos versionados corresponden al contrato', () => {

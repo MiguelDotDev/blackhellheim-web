@@ -1,0 +1,26 @@
+/* Marca BlackHellHeim (docs/diseno/marca.md v2). Único archivo con literales de color. Solo modo oscuro. */
+@import "@fontsource/anton/latin-400.css";
+@import "@fontsource-variable/inter/wght.css";
+
+@theme {
+  --color-primario: #E4007C;
+  --color-primario-hover: #C70069;
+  --color-sobre-primario: #FFFFFF;
+  --color-acento: #F5A623;
+  --color-turquesa: #2EC4B6;
+  --color-fondo: #0B0B0D;
+  --color-tarjeta: #15151A;
+  --color-texto: #EDEDED;
+  --color-texto-secundario: #A1A1AA;
+  --color-borde: #2A2A31;
+  --color-exito: #3FA66B;
+  --color-error: #E5484D;
+  --color-aviso: #E0A93B;
+
+  --font-titulo: "Anton", Impact, "Arial Narrow", sans-serif;
+  --font-sans: "Inter Variable", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-sm: 4px;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+}

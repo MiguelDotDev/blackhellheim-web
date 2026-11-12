@@ -30,7 +30,9 @@ public/favicon.svg
 
 ## Licencias
 
-`@fontsource/<fuente>`: MIT para el paquete; la fuente, OFL-1.1 (se confirma en la tarea de verificación).
+Verificadas (T002, `npm ls --all`, sin dependencias transitivas): `@fontsource/anton` 5.3.0 (Anton, OFL-1.1) y `@fontsource-variable/inter` 5.3.0 (Inter, OFL-1.1); los paquetes son MIT. Fuente de títulos: Anton, según `docs/diseno/marca.md` v2 (no Cinzel).
+Iconos PWA (`public/iconos/`) generados una vez desde el monograma con `sharp` (Apache-2.0, solo herramienta temporal, no queda como dependencia). El manifiesto llega con la HU-39.
+Nota: `Monograma` se llama `MonogramaMarca` (la regla ESLint exige nombres de varias palabras).
 
 ## Riesgos
 
