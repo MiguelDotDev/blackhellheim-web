@@ -17,7 +17,7 @@ I, II, III, V, VI, VII, VIII, IX, X y XI cumplen; ver decisiones.
 
 ## Licencias (principio VIII)
 
-Sin dependencias nuevas.
+Dependencia nueva candidata: Playwright (Apache-2.0) u otra herramienta de navegador; licencia, árbol y descargas se verifican en T002 antes de instalar.
 
 ## Estructura
 

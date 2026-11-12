@@ -16,7 +16,7 @@
 
 - [ ] T003 [FE] Escribir primero la prueba del flujo completo contra el mock (catálogo → detalle → carrito → acceso → checkout → pago simulado → confirmación) (FR-001)
 - [ ] T004 [FE] Escribir primero las pruebas de fallo (red, 401 con renovación, 409, sin existencia) y hacerlas pasar (FR-002)
-- [ ] T005 [FE] Integrarlas en la CI sin alterar los cuatro controles de HU-10 y medir el tiempo (≤ 5 min) (FR-001)
+- [ ] T005 [FE] Integrarlas en la CI sin alterar los cuatro controles de HU-10 y medir el tiempo (≤ 5 min); las pruebas no dependen del orden ni de puertos fijos, y los reintentos por tiempo son acotados, nunca se desactiva la prueba (casos límite, FR-001)
 
 ## Fase 4: Demostración real (US2)
 
