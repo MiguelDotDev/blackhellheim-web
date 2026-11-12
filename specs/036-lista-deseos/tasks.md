@@ -16,7 +16,7 @@
 
 ## Fase 3: Corazón y lista
 
-- [ ] T005 [FE] Escribir primero pruebas del corazón (marcado, quitar, sin sesión → acceso, reversión al fallar, una petición por clic, accesibilidad) e implementarlo en catálogo y detalle (FR-001, FR-002, FR-003, FR-004)
+- [ ] T005 [FE] Escribir primero pruebas del corazón (marcado, quitar, sin sesión → acceso, reversión al fallar, una petición por clic, sin conexión → falla con aviso y se revierte, accesibilidad) e implementarlo en catálogo y detalle (FR-001, FR-002, FR-003, FR-004)
 - [ ] T006 [FE] Escribir primero pruebas de `/deseos` (lista, vacío, no disponible) e implementar la página (FR-003)
 
 ## Fase 4: Integración
