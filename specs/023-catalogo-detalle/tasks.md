@@ -16,13 +16,13 @@
 
 ## Fase 3: Catálogo (US1)
 
-- [ ] T005 [FE] Escribir primero pruebas de la lista (paginación, filtros en la dirección, vacío, error con reintento) e implementar `paginas/catalogo` (FR-001, FR-002, FR-006)
+- [ ] T005 [FE] Escribir primero pruebas de la lista (paginación, filtros en la dirección, vacío, error con reintento, esqueletos de carga y que un fallo de red no borra lo ya mostrado) e implementar el estado del catálogo en un store reutilizable por HU-39 `paginas/catalogo` (FR-001, FR-002, FR-006)
 - [ ] T006 [FE] Prueba de que ningún archivo hace aritmética con precios y de que el precio mostrado es el recibido (formato `es-MX`) (FR-003)
 
 ## Fase 4: Detalle y variantes (US2)
 
 - [ ] T007 [FE] Escribir primero pruebas del selector de variante (disponibilidad, cambio de imagen y precio, teclado, estado no solo por color) e implementar `funcionalidades/elegir-variante` (FR-004, FR-005)
-- [ ] T008 [FE] Implementar la galería accesible y `paginas/detalle-producto` con 404 (FR-005, FR-006)
+- [ ] T008 [FE] Implementar la galería accesible y `paginas/detalle-producto` con 404 y marcador con texto alternativo si una imagen no carga (FR-005, FR-006)
 
 ## Fase 5: Compra (US3)
 
