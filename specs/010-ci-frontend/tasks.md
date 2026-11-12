@@ -63,10 +63,10 @@
 
 ## Fase 8: Tareas manuales (solo la desarrolladora)
 
-- [ ] T017 [MANUAL] Habilitar GitHub Actions en el repositorio (Settings → Actions → General: permitir acciones; «Workflow permissions» en «Read repository contents»; no permitir que las ejecuciones aprueben pull requests) y hacer `git push origin sprint/02`
-- [ ] T018 [MANUAL] Comprobar en la pestaña Actions que el push de `sprint/02` y un pull request `sprint/02` → `developer` muestran los 4 controles `verificar (…)` en verde, cada uno en menos de 10 minutos (SC-001, SC-002, SC-005)
-- [ ] T019 [MANUAL] Prueba negativa SC-004: en una rama temporal `sprint/99-prueba-ci`, un commit por cada error provocado (import entre capas, error de tipos, prueba que falla, import inexistente) y comprobar que solo cae el control correspondiente; borrar la rama (local y remota)
-- [ ] T020 [MANUAL] Configurar la protección de `main`, `release` y `developer` (Settings → Branches): exigir pull request y los cuatro controles `verificar (lint)`, `verificar (type-check)`, `verificar (test)` y `verificar (build)`, y comprobar que un pull request en rojo no se puede unir (SC-006). Al terminar, avisar para marcar HU-10 como Hecha en `docs/scrum/backlog.md`
+- [x] T017 [MANUAL] Habilitar GitHub Actions en el repositorio (Settings → Actions → General: permitir acciones; «Workflow permissions» en «Read repository contents»; no permitir que las ejecuciones aprueben pull requests) y hacer `git push origin sprint/02`
+- [x] T018 [MANUAL] Comprobar en la pestaña Actions que el push de `sprint/02` y un pull request `sprint/02` → `developer` muestran los 4 controles `verificar (…)` en verde, cada uno en menos de 10 minutos (SC-001, SC-002, SC-005)
+- [x] T019 [MANUAL] Prueba negativa SC-004: en una rama temporal `sprint/99-prueba-ci`, un commit por cada error provocado (import entre capas, error de tipos, prueba que falla, import inexistente) y comprobar que solo cae el control correspondiente; borrar la rama (local y remota)
+- [x] T020 [MANUAL] Configurar la protección de `main`, `release` y `developer` (Settings → Branches): exigir pull request y los cuatro controles `verificar (lint)`, `verificar (type-check)`, `verificar (test)` y `verificar (build)`, y comprobar que un pull request en rojo no se puede unir (SC-006). Al terminar, avisar para marcar HU-10 como Hecha en `docs/scrum/backlog.md`
 
 ## Dependencias y orden
 

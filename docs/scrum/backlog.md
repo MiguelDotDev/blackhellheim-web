@@ -31,7 +31,7 @@ Meta: CI del backend, esqueleto Vue con ambientes, cliente y mock. Rama: `sprint
 | 7 | web | FE | 9 | M | Quiero el esqueleto Vue 3 con TypeScript, Vite, Pinia, Router, Tailwind y capas FSD. | npm run lint falla si una capa importa de otra superior. | specs/007-esqueleto-vue-fsd | Hecha |
 | 8 | web | FE | 3 | M | Quiero ambientes de desarrollo, prueba y producción. | La URL del API cambia según .env.development, .env.test y .env.production. | specs/008-ambientes | Hecha |
 | 9 | web | FE | 6 | M | Quiero un cliente API tipado generado desde OpenAPI y un servidor mock. | El cliente se regenera con un comando y el mock responde un endpoint de ejemplo. | specs/009-cliente-api-mock | Hecha |
-| 10 | web | CI | 5 | M | Quiero CI del frontend con lint, tipos, pruebas y build. | Cada push corre las cuatro verificaciones. | specs/010-ci-frontend | En progreso |
+| 10 | web | CI | 5 | M | Quiero CI del frontend con lint, tipos, pruebas y build. | Cada push corre las cuatro verificaciones. | specs/010-ci-frontend | Hecha |
 
 ## Sprint 3 · 2–8 oct · 31 h
 
