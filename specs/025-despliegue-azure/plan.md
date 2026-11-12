@@ -38,3 +38,12 @@ docs/despliegue-azure.md   # recursos, variables, reversión
 - **R-1**: la cookie de refresh requiere mismo origen ⇒ el proxy debe conservar `Set-Cookie` y `Host`/`X-Forwarded-*`.
 - **R-2**: sin Docker local no se puede probar la imagen: la tarea de construcción queda `[MANUAL]` si `docker` no existe.
 - **R-3**: el SHA de acciones cambia con el tiempo; se consulta al implementar.
+
+## Notas de implementación
+
+- Acciones fijadas (consultadas con `git ls-remote`): `actions/checkout` `3d3c42e5…` (v7.0.1, ya usada en CI) y `azure/login` `a641126d…` (v3.1.0, MIT). Se usa la CLI de Docker en lugar de `docker/login-action` y `docker/build-push-action`: menos acciones externas que vigilar.
+- El trabajo usa `environment: produccion`, por lo que el sujeto de la credencial federada es `repo:<dueño>/blackhellheim-web:environment:produccion`, no `ref:refs/heads/main` (corrige T002).
+- Variable adicional `AZURE_RESOURCE_GROUP` (`az containerapp update` la exige); ampliación de T003.
+- `.dockerignore` conserva `mock/` y `tests/` porque `vue-tsc --build` los tipa dentro de `npm run build`.
+- `ci.yml` usa el grupo de concurrencia `ci-…` y el despliegue `despliegue-produccion`, para que el CI invocado no choque con el del llamador.
+- T006 verificada con Docker 29 local: `/`, `/acceso` y `/api/salud` (el mock solo sirve `/salud`, así que el prefijo se quita).

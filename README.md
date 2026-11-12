@@ -46,6 +46,10 @@ La guía de capas y de reglas de importación está en [`src/LEEME.md`](src/LEEM
 - Mock: contraseña de al menos 8 caracteres; los datos viven en memoria (se pierden al reiniciar). La cabecera `x-mock-token: caducado` fuerza 401 en `GET /auth/yo`. CORS con credenciales para `http://localhost:5173` (cambia con `MOCK_ORIGENES`, separados por comas).
 - Hook de «sesión iniciada»: `useSesion().alIniciarSesion(fn)`.
 
+## Despliegue
+
+Imagen Docker (nginx) y despliegue a Azure desde `main`: ver [`docs/despliegue-azure.md`](docs/despliegue-azure.md).
+
 ## Integración continua
 
 `.github/workflows/ci.yml` corre en cada push y pull request hacia `main`, `release`, `developer` y `sprint/**`. Son cuatro controles independientes: `verificar (lint)`, `verificar (type-check)`, `verificar (test)` y `verificar (build)`. Usa permisos de solo lectura, sin secretos, y acciones fijadas por SHA.

@@ -41,7 +41,7 @@ Meta: Acceso con JWT de punta a punta y primer despliegue a Azure. Rama: `sprint
 |---|---|---|---|---|---|---|---|---|
 | 13 | api | BE DB | 12 | M | Como cliente, quiero registrarme e iniciar sesión con JWT de acceso corto y refresh rotativo, con roles Cliente y Administrador. | Un refresh reusado revoca la familia de tokens; pruebas de caso exitoso, error y validación. |  | Pendiente |
 | 14 | web | FE | 9 | M | Como cliente, quiero pantallas de acceso y que mi sesión se renueve sola. | Tras caducar el acceso, la siguiente petición se repite con un token nuevo sin pedir contraseña. | specs/014-acceso-sesion | En progreso |
-| 25 | api + web | CI | 10 | M | Quiero un primer despliegue continuo a Azure con la dirección por defecto, incluyendo el proxy de /api. | Un push a la rama principal publica API y web como contenedores; la web carga por HTTPS y /api responde a través de ella. | specs/025-despliegue-azure | Pendiente |
+| 25 | api + web | CI | 10 | M | Quiero un primer despliegue continuo a Azure con la dirección por defecto, incluyendo el proxy de /api. | Un push a la rama principal publica API y web como contenedores; la web carga por HTTPS y /api responde a través de ella. | specs/025-despliegue-azure | En progreso |
 
 ## Sprint 4 · 9–15 oct · 36 h
 
