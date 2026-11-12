@@ -13,7 +13,7 @@
 - [ ] T002 [FE] Escribir primero `tests/documentacion/diferidos.test.ts` (carpetas 900 y 901, marca «DIFERIDA», sin `- [ ]`, plantillas legales marcadas como ejemplo) (FR-005)
 - [ ] T003 [FE] Completar `specs/900-…/spec.md` con la plantilla de campos y la marca (FR-001, FR-003)
 - [ ] T004 [FE] Crear `specs/901-cfdi-diferido/spec.md` con la misma estructura (FR-002, FR-003)
-- [ ] T005 [FE] Crear las plantillas de `docs/legal/` con la marca de ejemplo no vigente (FR-004)
+- [ ] T005 [FE] Crear las plantillas de `docs/legal/` con la marca de ejemplo no vigente, y listar 900 y 901 en el backlog como fuera de alcance, no como pendientes (casos límite, FR-004)
 
 ## Fase 3: Revisión
 
