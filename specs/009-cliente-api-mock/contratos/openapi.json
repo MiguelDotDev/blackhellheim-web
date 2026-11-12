@@ -1,0 +1,256 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "BlackHellHeim API",
+    "version": "0.4.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5068/"
+    }
+  ],
+  "paths": {
+    "/salud": {
+      "get": {
+        "tags": [
+          "BlackHellHeim.Api"
+        ],
+        "operationId": "obtenerSalud",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadoSalud"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tiendas/{codigo}": {
+      "get": {
+        "tags": [
+          "BlackHellHeim.Api"
+        ],
+        "operationId": "consultarTienda",
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[A-Z]{3}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Tienda"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "408": {
+            "description": "Request Timeout",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/salud/base": {
+      "get": {
+        "tags": [
+          "BlackHellHeim.Api"
+        ],
+        "operationId": "obtenerSaludBaseDatos",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EstadoBaseDatos"
+                }
+              }
+            }
+          },
+          "503": {
+            "description": "Service Unavailable",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "EstadoBaseDatos": {
+        "required": [
+          "estado"
+        ],
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          }
+        }
+      },
+      "EstadoSalud": {
+        "required": [
+          "estado"
+        ],
+        "type": "object",
+        "properties": {
+          "estado": {
+            "type": "string"
+          }
+        }
+      },
+      "ProblemDetails": {
+        "required": [
+          "type",
+          "title",
+          "status",
+          "codigo",
+          "idCorrelacion"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "URI que identifica el tipo de problema.",
+            "format": "uri"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "instance": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "codigo": {
+            "type": "string",
+            "description": "Código estable del error."
+          },
+          "idCorrelacion": {
+            "type": "string",
+            "description": "Identificador de correlación de la ejecución."
+          },
+          "errores": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "description": "Errores por campo; solo en errores de validación."
+          }
+        }
+      },
+      "Tienda": {
+        "required": [
+          "codigo",
+          "nombre",
+          "moneda"
+        ],
+        "type": "object",
+        "properties": {
+          "codigo": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          },
+          "nombre": {
+            "type": "string"
+          },
+          "moneda": {
+            "pattern": "^[A-Z]{3}$",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "BlackHellHeim.Api"
+    }
+  ]
+}
