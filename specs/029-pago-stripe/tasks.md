@@ -16,12 +16,12 @@
 
 ## Fase 3: Pagar (US1)
 
-- [ ] T005 [FE] Escribir primero pruebas de `pagar` (redirige a la dirección devuelta, rechaza esquemas no `https:`, error con reintento, un solo envío por doble clic) e implementar `funcionalidades/pagar` y conectar `onPagar` de HU-27 (FR-001, FR-002, FR-006)
+- [ ] T005 [FE] Escribir primero pruebas de `pagar` (redirige a la dirección devuelta, rechaza esquemas no `https:`, error con reintento, un solo envío por doble clic, clave de idempotencia si el contrato la pide, carrito intacto tras un error) e implementar `funcionalidades/pagar` y conectar `onPagar` de HU-27 (FR-001, FR-002, FR-006)
 - [ ] T006 [FE] Prueba que busca `stripe.js`, `sk_`, `pk_` y `whsec_` en `src/` y `dist` (FR-002)
 
 ## Fase 4: Resultado (US2, US3)
 
-- [ ] T007 [FE] Escribir primero pruebas de la consulta de estado (pagado, pendiente, fallido, procesando con espera creciente y límite, sin confianza en la dirección de retorno, diferido con instrucciones) e implementar `paginas/resultado-pago` y la página de cancelación (FR-003, FR-004, FR-005)
+- [ ] T007 [FE] Escribir primero pruebas de la consulta de estado (pagado, pendiente, fallido, procesando con espera creciente y límite, sin confianza en la dirección de retorno, diferido con instrucciones y sin marcarlo pagado, sesión caducada que se renueva, sin conexión con consulta al recuperar red, cancelación que muestra el carrito y permite reintentar sin duplicar cobro) e implementar `paginas/resultado-pago` y la página de cancelación (FR-003, FR-004, FR-005)
 
 ## Fase 5: Cuentas e integración
 

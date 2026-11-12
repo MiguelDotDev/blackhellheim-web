@@ -16,7 +16,7 @@
 
 ## Fase 3: Pedidos (US1)
 
-- [ ] T005 [FE] Escribir primero pruebas de la lista (filtro por estado, paginación en la dirección, rol, detalle, accesibilidad) e implementar `paginas/admin-pedidos` (FR-001, FR-002, FR-005, FR-007)
+- [ ] T005 [FE] Escribir primero pruebas de la lista (filtro por estado, paginación en la dirección, rol, detalle, accesibilidad, sin datos personales en consola ni más campos que los del contrato) e implementar `paginas/admin-pedidos` (FR-001, FR-002, FR-005, FR-007)
 
 ## Fase 4: Entrega (US2)
 
@@ -24,7 +24,7 @@
 
 ## Fase 5: Ventas por código (US3)
 
-- [ ] T007 [FE] Escribir primero pruebas (total del backend, cero ventas, lista paginada, sin sumas en el cliente) e implementar la vista de ventas (FR-004)
+- [ ] T007 [FE] Escribir primero pruebas (total del backend, cero ventas, lista paginada, sin sumas en el cliente) e implementar la vista de ventas en `/admin/creadoras/:codigo` con `meta.rol = Administrador` y tablas accesibles (FR-001, FR-004, FR-005)
 
 ## Fase 6: Integración
 
