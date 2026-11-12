@@ -13,16 +13,16 @@
 ## Fase 2: Mock y almacenamiento local
 
 - [ ] T004 [FE] Escribir primero `tests/api/mock-carrito.test.ts` y ampliar el mock con carrito y fusión (FR-007)
-- [ ] T005 [FE] Escribir primero las pruebas del repositorio local (persistencia, cantidades, límites, memoria si no hay almacenamiento, sin precios guardados) e implementarlo con IndexedDB; si hace falta `fake-indexeddb`, verificar y anotar su licencia (FR-001, FR-002, FR-003)
+- [ ] T005 [FE] Escribir primero las pruebas del repositorio local (persistencia, cantidades, límites, memoria si no hay almacenamiento, sin precios guardados) e implementarlo con IndexedDB; si hace falta `fake-indexeddb`, verificar y anotar su licencia (FR-001)
 
 ## Fase 3: Fusión y carrito con sesión
 
-- [ ] T006 [FE] Escribir primero pruebas de fusión (éxito, variante repetida decidida por el servidor, fallo conserva el local) y del repositorio remoto; implementar `entidades/carrito` y conectar el gancho de sesión iniciada de HU-14 (FR-002, FR-003)
+- [ ] T006 [FE] Escribir primero pruebas de fusión (éxito, variante repetida decidida por el servidor, fallo conserva el local) y del repositorio remoto; implementar `entidades/carrito` con la interfaz agregar/cambiar cantidad/quitar/vaciar/contar usada por HU-23 y HU-27 (FR-004) y conectar el gancho de sesión iniciada de HU-14 (FR-002, FR-003)
 - [ ] T007 [FE] Prueba de cierre de sesión (vuelve a carrito local vacío) y sincronización entre pestañas (FR-006)
 
 ## Fase 4: Interfaz
 
-- [ ] T008 [FE] Escribir primero pruebas del contador accesible y de la página `/carrito` (línea no disponible marcada, cantidades) e implementar `widgets/icono-carrito` y `paginas/carrito` (FR-004, FR-005)
+- [ ] T008 [FE] Escribir primero pruebas del contador accesible y de la página `/carrito` (línea no disponible marcada, cantidades, precios del resumen sin sesión tomados del store del catálogo de HU-23 y nunca guardados en el carrito) e implementar `widgets/icono-carrito` y `paginas/carrito` (FR-004, FR-005)
 
 ## Fase 5: Integración
 
