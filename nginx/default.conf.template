@@ -1,0 +1,54 @@
+# Plantilla: la imagen oficial sustituye ${API_URL} al arrancar (solo variables definidas; $uri etc. quedan intactas).
+map $http_x_forwarded_proto $esquema_cliente {
+  default $http_x_forwarded_proto;
+  ''      $scheme;
+}
+
+server {
+  listen 8080;
+  server_name _;
+  root /usr/share/nginx/html;
+  index index.html;
+  include /etc/nginx/snippets/cabeceras-seguridad.conf;
+
+  # /api/salud → ${API_URL}/salud: la barra final de proxy_pass quita el prefijo /api (pendiente de la HU-8).
+  # Sin «Host» explícito, nginx envía el de ${API_URL}, que Container Apps necesita para enrutar.
+  # Set-Cookie y el resto de cabeceras de la respuesta pasan sin filtrar (cookie de refresh, mismo origen).
+  location /api/ {
+    proxy_pass ${API_URL}/;
+    proxy_http_version 1.1;
+    proxy_ssl_server_name on;
+    proxy_set_header X-Forwarded-Host $host;
+    proxy_set_header X-Forwarded-Proto $esquema_cliente;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    include /etc/nginx/snippets/cabeceras-seguridad.conf;
+  }
+
+  # Archivos con hash en el nombre: inmutables.
+  location /assets/ {
+    try_files $uri =404;
+    add_header Cache-Control "public, max-age=31536000, immutable";
+    include /etc/nginx/snippets/cabeceras-seguridad.conf;
+  }
+
+  # Deben revalidarse siempre para que una versión nueva llegue de inmediato.
+  location = /sw.js {
+    add_header Cache-Control "no-cache";
+    include /etc/nginx/snippets/cabeceras-seguridad.conf;
+  }
+  location = /manifest.webmanifest {
+    add_header Cache-Control "no-cache";
+    include /etc/nginx/snippets/cabeceras-seguridad.conf;
+  }
+  location = /index.html {
+    add_header Cache-Control "no-cache";
+    include /etc/nginx/snippets/cabeceras-seguridad.conf;
+  }
+
+  # Respaldo SPA: cualquier ruta del enrutador sirve index.html.
+  location / {
+    try_files $uri /index.html;
+    add_header Cache-Control "no-cache";
+    include /etc/nginx/snippets/cabeceras-seguridad.conf;
+  }
+}
