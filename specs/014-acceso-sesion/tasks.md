@@ -34,7 +34,7 @@
 
 - [x] T013 [FE] `npm run lint`, `type-check`, `test`, `build` en verde; README: sesión y mock de auth
 - [x] T014 [FE] Fila de HU-14 en `backlog.md` (Spec llena; Estado = En progreso mientras T015 siga pendiente); commit `HU-14: acceso y sesión`; avisar «HU-14 terminada. Haz push a sprint/03»
-- [ ] T015 [MANUAL] Cuando el backend de HU-13 esté desplegado, probar el flujo contra la API real (rebajar el mock si el contrato difiere)
+- [x] T015 [MANUAL] Cuando el backend de HU-13 esté desplegado, probar el flujo contra la API real (rebajar el mock si el contrato difiere) — probado en producción (13 nov 2026, API desplegado en Azure: registro e inicio de sesión funcionando)
 
 ## Dependencias
 
