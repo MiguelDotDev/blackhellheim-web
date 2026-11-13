@@ -40,7 +40,7 @@ Meta: Acceso con JWT de punta a punta y primer despliegue a Azure. Rama: `sprint
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
 | 13 | api | BE DB | 12 | M | Como cliente, quiero registrarme e iniciar sesión con JWT de acceso corto y refresh rotativo, con roles Cliente y Administrador. | Un refresh reusado revoca la familia de tokens; pruebas de caso exitoso, error y validación. |  | Pendiente |
-| 14 | web | FE | 9 | M | Como cliente, quiero pantallas de acceso y que mi sesión se renueve sola. | Tras caducar el acceso, la siguiente petición se repite con un token nuevo sin pedir contraseña. | specs/014-acceso-sesion | En progreso |
+| 14 | web | FE | 9 | M | Como cliente, quiero pantallas de acceso y que mi sesión se renueve sola. | Tras caducar el acceso, la siguiente petición se repite con un token nuevo sin pedir contraseña. | specs/014-acceso-sesion | Hecha |
 | 25 | api + web | CI | 10 | M | Quiero un primer despliegue continuo a Azure con la dirección por defecto, incluyendo el proxy de /api. | Un push a la rama principal publica API y web como contenedores; la web carga por HTTPS y /api responde a través de ella. | specs/025-despliegue-azure | En progreso |
 
 ## Sprint 4 · 9–15 oct · 36 h
@@ -49,7 +49,7 @@ Meta: Marca, cliente Printful, dominio de diseños y subida de arte. Rama: `spri
 
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
-| 11 | web | FE | 8 | M | Como cliente, quiero una marca reconocible: tokens, fuentes locales, logo y monograma. | Tokens de Tailwind, logo SVG y monograma entregados y usados en el esqueleto. |  | Pendiente |
+| 11 | web | FE | 8 | M | Como cliente, quiero una marca reconocible: tokens, fuentes locales, logo y monograma. | Tokens de Tailwind, logo SVG y monograma entregados y usados en el esqueleto. | specs/011-marca | Hecha |
 | 15 | api | BE | 10 | M | Quiero un cliente de Printful para catálogo, variantes y disponibilidad. | Lista variantes de una playera filtradas por técnica y país; un 429 se reintenta con retry-after. |  | Pendiente |
 | 16 | api | BE DB | 8 | M | Quiero el dominio de diseño, producto base y variante. | Migración aplicada; un diseño apunta a variantes de Printful y a un archivo de arte. |  | Pendiente |
 | 17 | api | BE | 10 | M | Como administradora, quiero subir el arte a Azure Blob con validaciones. | Rechaza lo que no sea PNG con fondo transparente, menor de 200 MB y de resolución mínima; devuelve URL pública. |  | Pendiente |
@@ -61,7 +61,7 @@ Meta: API de catálogo, panel de alta de diseños y motor de precios. Rama: `spr
 | HU | Repos | Comp. | Horas | Prio | Historia | Criterio de aceptación | Spec | Estado |
 |---|---|---|---|---|---|---|---|---|
 | 19 | api | BE | 6 | M | Como visitante, quiero que la API de catálogo liste, filtre y detalle las playeras. | Listado paginado con filtros; el detalle trae imágenes, colores y tallas. |  | Pendiente |
-| 18 | web | FE | 12 | M | Como administradora, quiero crear y editar diseños con varias imágenes, colores y tallas. | El formulario guarda un diseño completo y avisa si el arte negro va sobre prenda negra. |  | Pendiente |
+| 18 | web | FE | 12 | M | Como administradora, quiero crear y editar diseños con varias imágenes, colores y tallas. | El formulario guarda un diseño completo y avisa si el arte negro va sobre prenda negra. | specs/018-editor-disenos | En progreso |
 | 20 | api | BE | 12 | M | Quiero un motor de precios con tipo de cambio, colchón y margen estático. | Para entradas dadas, el precio coincide con la fórmula y termina en 9 o 90; el tipo de cambio se guarda por día. |  | Pendiente |
 
 ## Sprint 6 · 23–29 oct · 36 h

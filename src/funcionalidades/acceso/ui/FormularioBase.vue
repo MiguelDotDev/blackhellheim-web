@@ -43,7 +43,7 @@ async function alEnviar() {
 <template>
   <form
     :id="idBase"
-    class="flex flex-col gap-4 rounded-lg border border-gray-300 bg-white p-6"
+    class="flex flex-col gap-4 rounded-lg border border-borde bg-tarjeta p-6"
     novalidate
     @submit.prevent="alEnviar"
   >
@@ -51,9 +51,12 @@ async function alEnviar() {
     <p
       v-if="mensaje"
       role="alert"
-      class="rounded border border-red-700 bg-red-50 p-3 text-red-800"
+      class="flex gap-2 rounded border border-error bg-fondo p-3 text-texto"
     >
-      {{ mensaje }}
+      <span
+        aria-hidden="true"
+        class="text-error"
+      >⚠</span>{{ mensaje }}
     </p>
     <CamposCredenciales
       v-model:correo="correo"
@@ -65,8 +68,14 @@ async function alEnviar() {
     <button
       type="submit"
       :disabled="enviando"
-      class="rounded bg-gray-900 px-4 py-2 font-medium text-white disabled:cursor-not-allowed disabled:opacity-60"
+      :aria-busy="enviando"
+      class="inline-flex min-h-11 items-center justify-center gap-2 rounded bg-primario px-4 py-2 font-semibold text-sobre-primario hover:bg-primario-hover disabled:cursor-not-allowed disabled:opacity-60"
     >
+      <span
+        v-if="enviando"
+        aria-hidden="true"
+        class="size-4 animate-spin rounded-full border-2 border-sobre-primario border-t-transparent motion-reduce:animate-none"
+      />
       {{ enviando ? 'Enviando…' : boton }}
     </button>
   </form>

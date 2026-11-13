@@ -61,3 +61,16 @@ it('/cuenta es privada: un visitante va a /acceso?destino=/cuenta', async () => 
   await e.push('/cuenta')
   expect(e.currentRoute.value.query.destino).toBe('/cuenta')
 })
+
+it.each(['/admin/disenos', '/admin/disenos/nuevo', `/admin/disenos/${'0'.repeat(8)}`])('%s exige rol Administrador', async (ruta) => {
+  setActivePinia(createPinia())
+  const sesion = useSesion()
+  sesion.token = 't'
+  sesion.rol = 'Cliente'
+  const e = crearEnrutador(createMemoryHistory())
+  await e.push(ruta)
+  expect(e.currentRoute.value.name).toBe('sin-permiso')
+  sesion.rol = 'Administrador'
+  await e.push(ruta)
+  expect(e.currentRoute.value.name).toMatch(/^admin-/)
+})
