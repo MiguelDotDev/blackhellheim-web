@@ -6,9 +6,9 @@
 ## Fase 1: Preparación
 
 - [x] T001 [FE] Confirmar que la HU-10 está hecha (`ci.yml` y su prueba existen) y consultar SHA y licencias de `azure/login` y demás acciones (`git ls-remote`); registrar en `plan.md`
-- [x] T002 [MANUAL] Crear en Azure: grupo de recursos, entorno y Container App de la web; app registrada con credencial federada para `repo:<dueño>/blackhellheim-web:ref:refs/heads/main`; rol mínimo (Contributor solo sobre la Container App); variable de entorno `API_URL` de la Container App con la dirección interna de la API; sondeo de salud (`/`) para que una revisión defectuosa no reciba tráfico (SC-004)
+- [x] T002 [MANUAL] Crear en Azure: grupo de recursos, entorno y Container App de la web; app registrada con credencial federada para `repo:<dueño>/blackhellheim-web:ref:refs/heads/main`; rol mínimo (Contributor solo sobre la Container App); variable de entorno `API_URL` de la Container App con la dirección interna de la API; sondeo de salud (`/`) para que una revisión defectuosa no reciba tráfico (SC-004) — Nota: la Container App tiene `API_URL`, pero NO tiene sondeo de salud configurado (`az containerapp create` no lo ofrece por opción); la comprobación de `/` la hace el workflow. La parte del sondeo en la app NO está cumplida.
 - [x] T002b [MANUAL] Tras la primera publicación, hacer público el paquete `blackhellheim-web` en GHCR (Packages → Package settings → Change visibility); la Container App lo descarga sin credenciales
-- [ ] T003 [MANUAL] Definir en GitHub las variables (no secretas) `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `APP_WEB` y el entorno `produccion`
+- [x] T003 [MANUAL] Definir en GitHub las variables (no secretas) `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `APP_WEB` y el entorno `produccion` — hecho (13 nov 2026): existen el entorno `produccion` (solo main) y las variables `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_RESOURCE_GROUP` y `APP_WEB`; el despliegue ya corrió con ellas
 
 ## Fase 2: Imagen (US1)
 
@@ -27,8 +27,8 @@
 - [x] T010 [FE] Escribir `docs/despliegue-azure.md` (recursos, variables, variable `API_URL`, reversión a la imagen anterior) y enlazarlo en `README.md`
 - [x] T011 [FE] `npm run lint`, `type-check`, `test`, `build` en verde; comprobar que `.env.production` conserva `VITE_API_URL=/api` y que `dist` no contiene URLs de Azure (FR-003)
 - [x] T012 [FE] Fila de HU-25 en `backlog.md`: Spec rellenada, Estado `En progreso` (parte web); commit `HU-25: despliegue continuo de la web`; avisar qué falta en api y en `[MANUAL]`
-- [ ] T013 [MANUAL] Habilitar el flujo, hacer el primer merge a `main` y comprobar HTTPS, `/` y `/api/salud` (SC-001, SC-003); probar un fallo y ver que el servicio anterior sigue (SC-004)
-- [ ] T014 [MANUAL] Marcar «Hecha» cuando ambos repos y T013 estén completos
+- [ ] T013 [MANUAL] Habilitar el flujo, hacer el primer merge a `main` y comprobar HTTPS, `/` y `/api/salud` (SC-001, SC-003); probar un fallo y ver que el servicio anterior sigue (SC-004) — Pendiente: falta la prueba de fallo (SC-004), que se hará junto con el ensayo de rollback del API.
+- [ ] T014 [MANUAL] Marcar «Hecha» cuando ambos repos y T013 estén completos — Pendiente: HU-25 sigue En progreso hasta hacer la prueba de fallo (SC-004) con el ensayo de rollback del API.
 
 ## Dependencias
 
