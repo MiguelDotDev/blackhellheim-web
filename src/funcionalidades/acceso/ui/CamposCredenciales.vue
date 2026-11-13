@@ -7,13 +7,13 @@ const contrasena = defineModel<string>('contrasena', { required: true })
 <template>
   <div class="flex flex-col gap-1">
     <label
-      class="font-medium"
+      class="text-sm font-medium text-texto-secundario"
       :for="`${idBase}-correo`"
     >Correo electrónico</label>
     <input
       :id="`${idBase}-correo`"
       v-model="correo"
-      class="rounded border border-gray-400 px-3 py-2 aria-invalid:border-red-700"
+      class="min-h-11 rounded border border-borde bg-fondo px-3 py-2 text-texto placeholder:text-texto-secundario hover:border-texto-secundario aria-invalid:border-error"
       name="correo"
       type="email"
       autocomplete="email"
@@ -24,19 +24,20 @@ const contrasena = defineModel<string>('contrasena', { required: true })
     <p
       v-if="errores.correo"
       :id="`${idBase}-correo-error`"
+      class="flex gap-2 text-sm text-error"
     >
-      {{ errores.correo[0] }}
+      <span aria-hidden="true">⚠</span>{{ errores.correo[0] }}
     </p>
   </div>
   <div class="flex flex-col gap-1">
     <label
-      class="font-medium"
+      class="text-sm font-medium text-texto-secundario"
       :for="`${idBase}-contrasena`"
     >Contraseña</label>
     <input
       :id="`${idBase}-contrasena`"
       v-model="contrasena"
-      class="rounded border border-gray-400 px-3 py-2 aria-invalid:border-red-700"
+      class="min-h-11 rounded border border-borde bg-fondo px-3 py-2 text-texto placeholder:text-texto-secundario hover:border-texto-secundario aria-invalid:border-error"
       name="contrasena"
       type="password"
       :autocomplete="autocompletarContrasena"
@@ -47,8 +48,9 @@ const contrasena = defineModel<string>('contrasena', { required: true })
     <p
       v-if="errores.contrasena"
       :id="`${idBase}-contrasena-error`"
+      class="flex gap-2 text-sm text-error"
     >
-      {{ errores.contrasena[0] }}
+      <span aria-hidden="true">⚠</span>{{ errores.contrasena[0] }}
     </p>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-// Encabezado mínimo y temporal: el diseño final llega con la HU-11.
 import { RouterLink } from 'vue-router'
+import { LogoMarca } from '@/compartido/ui'
 import { BotonCerrarSesion } from '@/funcionalidades/acceso'
 import { useSesion } from '@/entidades/sesion'
 
@@ -8,23 +8,30 @@ const sesion = useSesion()
 </script>
 
 <template>
-  <header class="flex items-center justify-between gap-4 border-b border-gray-300 bg-white px-6 py-3">
-    <RouterLink to="/">
-      BlackHellHeim
+  <header class="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 border-b border-borde bg-tarjeta px-4 py-3 sm:px-6">
+    <RouterLink
+      to="/"
+      class="inline-flex min-h-11 items-center text-texto"
+    >
+      <LogoMarca class="h-6 w-auto" />
     </RouterLink>
     <p
       v-if="sesion.activa"
-      class="flex items-center gap-3"
+      class="flex flex-wrap items-center gap-3 text-sm"
     >
-      <span>{{ sesion.usuario?.correo }} · {{ sesion.rol }}</span>
-      <RouterLink to="/cuenta">
+      <span class="text-texto-secundario">{{ sesion.usuario?.correo }} · {{ sesion.rol }}</span>
+      <RouterLink
+        to="/cuenta"
+        class="inline-flex min-h-11 items-center"
+      >
         Mi cuenta
       </RouterLink>
-      <BotonCerrarSesion class="rounded border border-gray-400 px-3 py-1" />
+      <BotonCerrarSesion class="min-h-11 rounded border border-borde px-3 py-1 text-texto hover:border-texto-secundario" />
     </p>
     <RouterLink
       v-else
       to="/acceso"
+      class="inline-flex min-h-11 items-center"
     >
       Iniciar sesión
     </RouterLink>

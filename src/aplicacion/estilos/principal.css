@@ -1,28 +1,30 @@
 @import "tailwindcss";
+@import "./marca.css";
 
-/*
- * Colores base (principio VII, accesibilidad):
- * texto #1f2937 sobre fondo #f9fafb → relación de contraste 14.05:1 (mínimo 4.5:1).
- * enlaces #1d4ed8 sobre fondo #f9fafb → relación de contraste 6.41:1.
- */
-:root {
-  --color-texto: #1f2937;
-  --color-fondo: #f9fafb;
-  --color-enlace: #1d4ed8;
-}
+@layer base {
+  html {
+    color-scheme: dark;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+  }
 
-html {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  color: var(--color-texto);
-  background-color: var(--color-fondo);
-}
+  h1, h2, h3 {
+    font-family: var(--font-titulo);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
 
-a {
-  color: var(--color-enlace);
-  text-decoration: underline;
-}
+  a {
+    color: var(--color-acento);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
 
-:focus-visible {
-  outline: 3px solid var(--color-enlace);
-  outline-offset: 2px;
+  :focus-visible {
+    outline: 3px solid var(--color-acento);
+    outline-offset: 2px;
+  }
 }
