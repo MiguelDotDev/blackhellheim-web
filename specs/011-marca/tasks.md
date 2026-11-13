@@ -21,7 +21,7 @@
 ## Fase 4: Cierre
 
 - [X] T008 [FE] `npm run lint`, `type-check`, `test`, `build` en verde; comprobar en el `dist` que no hay peticiones externas de fuentes (`grep -r "fonts.g" dist`)
-- [ ] T009 [FE] Fila de HU-11 en `backlog.md`: Spec y Estado = Hecha (solo si T001 está hecho); commit `HU-11: marca`; avisar «HU-11 terminada. Haz push a sprint/04»
+- [x] T009 [FE] Fila de HU-11 en `backlog.md`: Spec y Estado = Hecha (solo si T001 está hecho); commit `HU-11: marca`; avisar «HU-11 terminada. Haz push a sprint/04»
 - [x] T010 [MANUAL] Revisar a ojo el esqueleto con la marca y aprobar
 
 ## Dependencias
