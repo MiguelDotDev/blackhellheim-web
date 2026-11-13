@@ -3,9 +3,13 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-  <main class="p-6 bg-(--color-fondo) text-(--color-texto)">
-    <h1>Página no encontrada</h1>
-    <p>La dirección que buscas no existe.</p>
+  <main class="mx-auto max-w-md px-4 py-8 text-texto sm:px-6">
+    <h1 class="mb-4 text-3xl">
+      Página no encontrada
+    </h1>
+    <p class="mb-4">
+      La dirección que buscas no existe.
+    </p>
     <RouterLink to="/">Volver al inicio</RouterLink>
   </main>
 </template>
