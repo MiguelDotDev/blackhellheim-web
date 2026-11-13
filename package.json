@@ -14,7 +14,7 @@
     "lint": "eslint .",
     "type-check": "vue-tsc --build",
     "test": "vitest run",
-    "api:generar": "openapi-typescript specs/014-acceso-sesion/contratos/openapi.json -o src/compartido/api/generado/esquema.d.ts",
+    "api:generar": "openapi-typescript specs/018-editor-disenos/contratos/openapi.json -o src/compartido/api/generado/esquema.d.ts",
     "mock": "node mock/iniciar.ts"
   },
   "dependencies": {

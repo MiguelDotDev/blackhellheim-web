@@ -8,8 +8,8 @@ function cors(origen = ''): Record<string, string> {
   return {
     'access-control-allow-origin': origenes.includes(origen) ? origen : origenes[0],
     'access-control-allow-credentials': 'true',
-    'access-control-allow-methods': 'GET, POST, OPTIONS',
-    'access-control-allow-headers': 'authorization, content-type, x-mock-token, x-reintento',
+    'access-control-allow-methods': 'GET, POST, PUT, OPTIONS',
+    'access-control-allow-headers': 'authorization, content-type, x-mock-token, x-mock-arte, if-match, x-reintento',
     vary: 'Origin',
   }
 }
