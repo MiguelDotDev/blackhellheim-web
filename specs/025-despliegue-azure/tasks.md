@@ -6,8 +6,8 @@
 ## Fase 1: Preparación
 
 - [x] T001 [FE] Confirmar que la HU-10 está hecha (`ci.yml` y su prueba existen) y consultar SHA y licencias de `azure/login` y demás acciones (`git ls-remote`); registrar en `plan.md`
-- [ ] T002 [MANUAL] Crear en Azure: grupo de recursos, entorno y Container App de la web; app registrada con credencial federada para `repo:<dueño>/blackhellheim-web:ref:refs/heads/main`; rol mínimo (Contributor solo sobre la Container App); variable de entorno `API_URL` de la Container App con la dirección interna de la API; sondeo de salud (`/`) para que una revisión defectuosa no reciba tráfico (SC-004)
-- [ ] T002b [MANUAL] Tras la primera publicación, hacer público el paquete `blackhellheim-web` en GHCR (Packages → Package settings → Change visibility); la Container App lo descarga sin credenciales
+- [x] T002 [MANUAL] Crear en Azure: grupo de recursos, entorno y Container App de la web; app registrada con credencial federada para `repo:<dueño>/blackhellheim-web:ref:refs/heads/main`; rol mínimo (Contributor solo sobre la Container App); variable de entorno `API_URL` de la Container App con la dirección interna de la API; sondeo de salud (`/`) para que una revisión defectuosa no reciba tráfico (SC-004)
+- [x] T002b [MANUAL] Tras la primera publicación, hacer público el paquete `blackhellheim-web` en GHCR (Packages → Package settings → Change visibility); la Container App lo descarga sin credenciales
 - [ ] T003 [MANUAL] Definir en GitHub las variables (no secretas) `AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `APP_WEB` y el entorno `produccion`
 
 ## Fase 2: Imagen (US1)
