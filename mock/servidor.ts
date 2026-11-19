@@ -31,8 +31,8 @@ export function iniciarServidor(puerto: number): Promise<Server> {
     const cabeceras = Object.fromEntries(Object.entries(req.headers).map(([k, v]) => [k, [v].flat().join(', ')]))
     const { estado, cuerpo, cabeceras: extra } = responder(
       req.method ?? 'GET',
-      new URL(req.url ?? '/', 'http://x').pathname,
-      { cuerpo: await leerJson(req), cabeceras },
+      new URL(req.url ?? '/', 'https://x').pathname,
+      { cuerpo: await leerJson(req), cabeceras, consulta: Object.fromEntries(new URL(req.url ?? '/', 'https://x').searchParams) },
     )
     const tipo = estado >= 400 ? 'application/problem+json' : 'application/json'
     res.writeHead(estado, { ...cabecerasCors, ...extra, ...(cuerpo && { 'content-type': tipo }) }).end(cuerpo && JSON.stringify(cuerpo))

@@ -11,6 +11,7 @@ export interface Respuesta {
 export interface Peticion {
   cuerpo?: Esquemas['CredencialesSolicitud'] & Esquemas['DisenoSolicitud']
   cabeceras?: Record<string, string | undefined>
+  consulta?: Record<string, string | undefined>
 }
 
 const titulos: Record<number, string> = {
@@ -121,10 +122,11 @@ function validarDiseno(c: Esquemas['DisenoSolicitud'] = {}) {
 const slug = (n: string) => n.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
 const colores = [['Negro', '#000000'], ['Blanco', '#ffffff'], ['Azul marino', '#1b2a49']]
+const tecnicasImpresion = ['dtg', 'dtfilm', 'embroidery', 'sublimation', 'cut-sew', 'digital']
 const variantesPrintful: Esquemas['VariantePrintfulDto'][] = colores.flatMap(([color, codigoColor], c) =>
   ['S', 'M', 'L', 'XL'].map((talla, t) => ({ id: 1000 + c * 10 + t, productoId: 71, color, codigoColor, talla, costoBaseUsd: 9.5, tecnica: 'dtg', disponiblePais: true })))
 
-function responderAdmin(metodo: string, ruta: string, { cuerpo, cabeceras = {} }: Peticion): Respuesta | undefined {
+function responderAdmin(metodo: string, ruta: string, { cuerpo, cabeceras = {}, consulta = {} }: Peticion): Respuesta | undefined {
   if (!/^\/admin\/(disenos|arte|printful)/.test(ruta)) return undefined
   const u = autenticar(cabeceras)
   if (!u) return problema(401, 'no_autenticado')
@@ -132,7 +134,14 @@ function responderAdmin(metodo: string, ruta: string, { cuerpo, cabeceras = {} }
   if (ruta.startsWith('/admin/printful') && metodo === 'GET') {
     if (ruta === '/admin/printful/productos') return { estado: 200, cuerpo: [{ id: 71, nombre: 'Playera unisex', tipo: 'T-SHIRT', tecnicas: ['dtg'] }] }
     const m = /^\/admin\/printful\/productos\/(\d+)\/variantes$/.exec(ruta)
-    if (m) return { estado: 200, cuerpo: variantesPrintful.filter((v) => v.productoId === Number(m[1])) }
+    if (m) {
+      // Igual que el backend (ValidadorListarVariantes): ambos parámetros son obligatorios.
+      const errores: Record<string, string[]> = {}
+      if (!tecnicasImpresion.includes(consulta.tecnica?.toLowerCase() ?? '')) errores.tecnica = [`Técnica no admitida. Valores: ${tecnicasImpresion.join(', ')}.`]
+      if (!/^[A-Z]{2}$/.test(consulta.pais ?? '')) errores.pais = ['El país debe ser un código ISO de dos letras mayúsculas (por ejemplo, MX).']
+      if (Object.keys(errores).length) return problema(400, 'solicitud_invalida', errores)
+      return { estado: 200, cuerpo: variantesPrintful.filter((v) => v.productoId === Number(m[1])) }
+    }
     return undefined
   }
   if (ruta === '/admin/arte') {

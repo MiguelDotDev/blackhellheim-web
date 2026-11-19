@@ -10,7 +10,7 @@ vi.mock('../lib/analizar-arte', async (original) => ({ ...(await original<object
 const imagen = (clara: boolean, ancho = 4000) => ({ datos: { data: new Uint8ClampedArray(clara ? [255, 255, 255, 255] : [0, 0, 0, 255]) }, ancho, alto: 4000 })
 const png = (nombre: string) => new File(['x'], nombre, { type: 'image/png' })
 let fallosArte = 0
-let peticiones: { m: string; ruta: string; cuerpo?: unknown }[] = []
+let peticiones: { m: string; ruta: string; cuerpo?: unknown; consulta?: Record<string, string> }[] = []
 
 beforeEach(async () => {
   reiniciarMock()
@@ -18,11 +18,11 @@ beforeEach(async () => {
   peticiones = []
   lectura.siguiente = []
   vi.stubGlobal('fetch', async (r: Request) => {
-    const ruta = new URL(r.url).pathname
+    const { pathname: ruta, searchParams } = new URL(r.url)
     const cuerpo = r.headers.get('content-type')?.includes('json') ? await r.json() : undefined
-    peticiones.push({ m: r.method, ruta, cuerpo })
+    peticiones.push({ m: r.method, ruta, cuerpo, consulta: Object.fromEntries(searchParams) })
     const falla = ruta === '/admin/arte' && fallosArte-- > 0
-    const res = responder(r.method, ruta, { cuerpo, cabeceras: { authorization: r.headers.get('authorization') ?? undefined, 'if-match': r.headers.get('if-match') ?? undefined, ...(falla && { 'x-mock-arte': '415' }) } })
+    const res = responder(r.method, ruta, { cuerpo, consulta: Object.fromEntries(searchParams), cabeceras: { authorization: r.headers.get('authorization') ?? undefined, 'if-match': r.headers.get('if-match') ?? undefined, ...(falla && { 'x-mock-arte': '415' }) } })
     return new Response(res.cuerpo ? JSON.stringify(res.cuerpo) : null, { status: res.estado, headers: { 'content-type': 'application/json' } })
   })
   setActivePinia(createPinia())
@@ -126,6 +126,11 @@ describe('borrador del diseño', () => {
     await b.guardar()
     const cuerpo = peticiones.find((p) => p.ruta === '/admin/disenos' && p.m === 'POST')!.cuerpo
     expect(JSON.stringify(Object.keys(cuerpo as object))).not.toMatch(/precio/i)
+  })
+  it('cargar catálogo envía técnica dtg y país MX y obtiene las variantes', async () => {
+    const b = await listo()
+    expect(peticiones.find((p) => p.ruta.endsWith('/variantes'))?.consulta).toEqual({ tecnica: 'dtg', pais: 'MX' })
+    expect(b.coloresDisponibles.length).toBeGreaterThan(0)
   })
   it('editar: carga, guarda con If-Match; cambio concurrente → aviso de conflicto sin pisar', async () => {
     const a = await listo()

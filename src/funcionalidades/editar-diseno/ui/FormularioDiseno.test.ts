@@ -18,7 +18,7 @@ beforeEach(async () => {
   lectura.oscura = true
   vi.stubGlobal('fetch', async (r: Request) => {
     const cuerpo = r.headers.get('content-type')?.includes('json') ? await r.json() : undefined
-    const res = responder(r.method, new URL(r.url).pathname, { cuerpo, cabeceras: { authorization: r.headers.get('authorization') ?? undefined, 'if-match': r.headers.get('if-match') ?? undefined } })
+    const res = responder(r.method, new URL(r.url).pathname, { cuerpo, consulta: Object.fromEntries(new URL(r.url).searchParams), cabeceras: { authorization: r.headers.get('authorization') ?? undefined, 'if-match': r.headers.get('if-match') ?? undefined } })
     return new Response(res.cuerpo ? JSON.stringify(res.cuerpo) : null, { status: res.estado, headers: { 'content-type': 'application/json' } })
   })
   pinia = createPinia()
