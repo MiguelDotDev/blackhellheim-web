@@ -17,8 +17,11 @@ async function resolver<T>(llamada: () => Promise<Crudo<T>>): Promise<Resultado<
 export const listarDisenos = (api: Api) => resolver(() => api.GET('/admin/disenos'))
 export const obtenerDiseno = (api: Api, id: string) => resolver(() => api.GET('/admin/disenos/{id}', { params: { path: { id } } }))
 export const listarProductos = (api: Api): Promise<Resultado<ProductoPrintful[]>> => resolver(() => api.GET('/admin/printful/productos'))
+/** El backend exige ambos al pedir variantes (aunque el contrato los marque opcionales). */
+export const TECNICA_IMPRESION = 'dtg'
+export const PAIS_IMPRESION = 'MX'
 export const listarVariantes = (api: Api, id: number): Promise<Resultado<VariantePrintful[]>> =>
-  resolver(() => api.GET('/admin/printful/productos/{id}/variantes', { params: { path: { id } } }))
+  resolver(() => api.GET('/admin/printful/productos/{id}/variantes', { params: { path: { id }, query: { tecnica: TECNICA_IMPRESION, pais: PAIS_IMPRESION } } }))
 
 /** Crea (sin `id`) o edita con `If-Match` = versión cargada. Nunca lleva precios. */
 export function guardarDiseno(api: Api, cuerpo: SolicitudDiseno, existente?: Pick<Diseno, 'id' | 'version'>): Promise<Resultado<Diseno>> {
