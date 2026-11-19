@@ -17,8 +17,14 @@ beforeEach(() => {
 describe('mock de diseños', () => {
   it('productos y variantes de Printful', () => {
     expect(responder('GET', '/admin/printful/productos', { cabeceras: admin }).cuerpo).toMatchObject([{ id: 71 }])
-    const v = responder('GET', '/admin/printful/productos/71/variantes', { cabeceras: admin }).cuerpo as unknown[]
+    const v = responder('GET', '/admin/printful/productos/71/variantes', { cabeceras: admin, consulta: { tecnica: 'dtg', pais: 'MX' } }).cuerpo as unknown[]
     expect(v).toHaveLength(12)
+  })
+  it('variantes exige técnica y país válidos (como el backend)', () => {
+    const pedir = (consulta: Record<string, string>) => responder('GET', '/admin/printful/productos/71/variantes', { cabeceras: admin, consulta })
+    expect(pedir({})).toMatchObject({ estado: 400, cuerpo: { errores: { tecnica: expect.any(Array), pais: expect.any(Array) } } })
+    expect(pedir({ tecnica: 'dtg', pais: 'mx' }).estado).toBe(400)
+    expect(pedir({ tecnica: 'otra', pais: 'MX' }).estado).toBe(400)
   })
   it('sin sesión → 401; con rol Cliente → 403', () => {
     expect(responder('GET', '/admin/disenos').estado).toBe(401)
