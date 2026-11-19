@@ -32,7 +32,7 @@ export function iniciarServidor(puerto: number): Promise<Server> {
     const { estado, cuerpo, cabeceras: extra } = responder(
       req.method ?? 'GET',
       new URL(req.url ?? '/', 'http://x').pathname,
-      { cuerpo: await leerJson(req), cabeceras },
+      { cuerpo: await leerJson(req), cabeceras, consulta: Object.fromEntries(new URL(req.url ?? '/', 'http://x').searchParams) },
     )
     const tipo = estado >= 400 ? 'application/problem+json' : 'application/json'
     res.writeHead(estado, { ...cabecerasCors, ...extra, ...(cuerpo && { 'content-type': tipo }) }).end(cuerpo && JSON.stringify(cuerpo))
